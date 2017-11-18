@@ -74,6 +74,17 @@ Route::get('/asd',function (){
 });
 
 
+Route::get('/star',function (){
+
+    return view('star');
+});
+
+Route::get('/hme',function (){
+
+    return view('home2');
+});
+
+
 
 
 
