@@ -364,7 +364,8 @@
 
 
                 <form method="POST"  action="/login/hotel-profile" style="background-color: transparent" hotel-profile4  class="form login">
-                    {{csrf_field()}}
+                    <?php echo e(csrf_field()); ?>
+
                     <div  class="form__field">
                         <label style="border: 1px solid #ccc ;height: 53px; background-color: transparent; border-right: transparent;" for="login__username"><i style="color:rgb(255,51,102);" class="fa fa-user" aria-hidden="true"></i><span class="hidden">Username</span></label>
                         <input style="height: 53px; background-color: transparent; border: 1px solid #ccc ;" id="username" type="text" name="username" class="form__input" placeholder="Username" required>
@@ -378,7 +379,7 @@
                     <div class="form__field">
                         <input type="submit" value="Sign In">
                     </div>
-                    @include('layout.errors')
+                    <?php echo $__env->make('layout.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 </form>
 
 
@@ -423,7 +424,8 @@
 
 
                 <form style="background-color: transparent" action="/registration/hotel-profile" method="POST" class="form login">
-                    {{csrf_field()}}
+                    <?php echo e(csrf_field()); ?>
+
 
                     <div  class="form__field">
                         <label style="border: 1px solid #ccc ;height: 53px; background-color: transparent; border-right: transparent;" for="login__username"><i style="color:rgb(255,51,102);" class="fa fa-user" aria-hidden="true"></i><span class="hidden">Username</span></label>
@@ -450,7 +452,7 @@
                     <div class="form__field">
                         <input type="submit" value="Register">
                     </div>
-@include('layout.errors')
+<?php echo $__env->make('layout.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 </form>
 
                 <!--  <p> <button style="float: right ;background: transparent; font-size: 20px; border: hidden; color:rgb(255,51,102) " type="button"  data-dismiss="modal">x</button> </p> -->

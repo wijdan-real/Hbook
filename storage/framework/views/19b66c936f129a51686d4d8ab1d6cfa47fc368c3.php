@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -284,7 +284,7 @@
         }
 
         /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
-        @media only screen and (max-device-width: 1024px) {
+        @media  only screen and (max-device-width: 1024px) {
             .parallax {
                 background-attachment: scroll;
             }

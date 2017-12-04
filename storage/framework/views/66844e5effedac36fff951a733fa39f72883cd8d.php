@@ -1,14 +1,14 @@
 
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-@if(auth()->check())
-    <title>{{Auth::user()->name}}</title>
-@endif
+<?php if(auth()->check()): ?>
+    <title><?php echo e(Auth::user()->name); ?></title>
+<?php endif; ?>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -157,7 +157,7 @@
             to {opacity: 1;}
         }
 
-        @keyframes fadeEffect {
+        @keyframes  fadeEffect {
             from {opacity: 0;}
             to {opacity: 1;}
         }
