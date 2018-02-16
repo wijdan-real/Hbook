@@ -3,23 +3,26 @@
 	clear: both;
 	margin: 0 auto;
 	padding: 1em 0 4em;
-	max-width: 1220px;
+	max-width: 1180px;
 	list-style: none;
 	text-align: center;
+	overflow-x: hidden;
+
 }
 
 /* Common style */
 .grid figure {
+	right:17px;
 	position: relative;
-	float:left;
+	float:right;
 	overflow: hidden;
 	margin: 10px 1%;
 	/*margin-left: -5px; */
 	min-width: 230px;
-	max-width: 280px;
-	max-height: 220px;
+	max-width: 260px;
+	max-height: 210px;
 	width: 40%;
-	height: 220px;
+	height: 210px;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -27,7 +30,6 @@
 
 .grid figure img {
 	position: relative;
-
 	display: block;
 	min-height: 100%;
 	max-width: 100%;

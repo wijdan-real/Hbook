@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" href="/css/home/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/css/home/demo.css" />
     <link rel="stylesheet" type="text/css" href="/css/home/set2.css" />
+    <link href="/css/comparisonstyle.css" rel="stylesheet">
+    <link href="/css/comparisontext.css" rel="stylesheet">
+    <link href="/css/comparisonw3.css" rel="stylesheet">
 
     <style>
 
@@ -198,7 +201,8 @@
 
   <!--    <div class="grid"> -->
   <div style="padding-top: 0px;" class="grid">
-      <figure class="effect-ming borderdesgin">
+      <figure class="selectProduct effect-ming borderdesgin" data-title="Nexus42" data-id="1">
+          <a class="w3-btn-floating w3-light-grey addButtonCircular addToCompare">+</a>
           <img src="/images/9.jpg" alt="img09"/>
           <figcaption>
               <h2>Funny <span>Ming</span></h2>
@@ -208,7 +212,8 @@
                          <a href="#" target="_blank"><i style="color: white; font-size: 14px;"class="fa fa-twitter"></i></a></span></p>
           </figcaption>
       </figure>
-      <figure class="effect-ming borderdesgin">
+      <figure class="selectProduct effect-ming borderdesgin" data-title="Nexus62" data-id="2">
+          <a class="w3-btn-floating w3-light-grey addButtonCircular addToCompare">+</a>
           <img src="images/10.jpg" alt="img08"/>
           <figcaption>
               <h2>Funny <span>Ming</span></h2>
@@ -218,7 +223,8 @@
                          <a href="#" target="_blank"><i style="color: white; font-size: 14px;"class="fa fa-twitter"></i></a></span></p>
           </figcaption>
       </figure>
-      <figure class="effect-ming borderdesgin">
+      <figure class="selectProduct effect-ming borderdesgin" data-title="Nexus4" data-id="3">
+          <a class="w3-btn-floating w3-light-grey addButtonCircular addToCompare">+</a>
           <img src="images/11.jpg" alt="img08"/>
           <figcaption>
               <h2>Funny <span>Ming</span></h2>
@@ -229,7 +235,8 @@
           </figcaption>
       </figure>
 
-      <figure class="effect-ming borderdesgin">
+      <figure class="selectProduct effect-ming borderdesgin" data-title="Nexus6" data-id="4">
+          <a class="w3-btn-floating w3-light-grey addButtonCircular addToCompare">+</a>
           <img src="images/12.jpg" alt="img08"/>
           <figcaption>
               <h2>Funny <span>Ming</span></h2>
@@ -241,6 +248,66 @@
       </figure>
   </div>
 
+
+
+  <!-- Code for items comparison -->
+
+  <!--preview panel-->
+  <div class="w3-container  w3-center">
+      <div class="w3-row w3-card-4 w3-grey w3-round-large w3-border comparePanle w3-margin-top">
+          <div class="w3-row">
+              <div class="w3-col l9 m8 s6 w3-margin-top">
+                  <h4>Added for comparison</h4>
+              </div>
+              <div class="w3-col l3 m4 s6 w3-margin-top">
+                  &nbsp;
+                  <button class="w3-btn w3-round-small w3-white w3-border notActive cmprBtn" disabled>Compare</button>
+              </div>
+          </div>
+          <div class=" titleMargin w3-container comparePan">
+          </div>
+      </div>
+  </div>
+  <!--end of preview panel-->
+
+  <!-- comparision popup-->
+  <div id="id01" class="w3-animate-zoom w3-white w3-modal modPos">
+      <div class="w3-container">
+          <a onclick="document.getElementById('id01').style.display='none'" class="whiteFont w3-padding w3-closebtn closeBtn">&times;</a>
+      </div>
+      <div style="" class="w3-row contentPop w3-margin-top">
+
+
+
+      </div>
+
+  </div>
+  <!--end of comparision popup-->
+
+  <!--  warning model  -->
+  <div id="WarningModal" class="w3-modal">
+      <div class="w3-modal-content warningModal">
+          <header class="w3-container w3-teal">
+              <h3><span>&#x26a0;</span>Error</h3>
+          </header>
+          <div class="w3-container">
+              <h4>Maximum of Three products are allowed for comparision</h4>
+
+          </div>
+          <footer class="w3-container w3-right-align">
+              <button id="warningModalClose" onclick="document.getElementById('id01').style.display='none'" class="w3-btn w3-hexagonBlue w3-margin-bottom  ">Ok</button>
+          </footer>
+      </div>
+  </div>
+  <!--  end of warning model  -->
+
+
+  <!-- Code for comparison ends here -->
+
+
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/Compare.js"></script>
 
 
   </body>

@@ -1313,6 +1313,16 @@
     });
 </script>
 
+<script>
+
+    // Stop carousel
+    $('.carousel').carousel({
+        interval: false
+    });
+
+
+</script>
+
 
 
     <script>

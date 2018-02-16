@@ -1,0 +1,213 @@
+.cardMargin{
+	
+	border: none !important;
+	position: relative;	
+    margin-bottom:20px;
+    margin-top:20px;
+}
+.addButton
+{
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	
+}
+.btnColor{
+	background-color: white !important;
+	border: 1px solid #0097ba !important;
+	color: #0097ba !important;
+}
+
+.addButtonCircular
+{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.headerPosition{
+    position: fixed !important;
+    width: 100%;
+}
+
+.navPosition{
+    height: 90% !important;
+    top: 10%;
+}
+
+.rangeboxPadding{
+    padding:0px 0px 0px 8px !important;
+}
+
+.descHeight{
+    min-height:72px;
+}
+
+@media only screen and (min-width:1367px){
+.w3-col.xl1{width:8.33333%}
+.w3-col.xl2{width:16.66666%}
+.w3-col.xl3,.w3-quarter{width:24.99999%}
+.w3-col.xl4,.w3-third{width:33.33333%}
+.w3-col.xl5{width:41.66666%}
+.w3-col.xl6,.w3-half{width:49.99999%}
+.w3-col.xl7{width:58.33333%}
+.w3-col.xl8,.w3-twothird{width:66.66666%}
+.w3-col.xl9,.w3-threequarter{width:74.99999%}
+.w3-col.xl10{width:83.33333%}
+.w3-col.xl11{width:91.66666%}
+.w3-col.xl12{width:99.99999%}}
+
+.rotateBtn{
+    -webkit-transform : rotate(45deg); 
+    -moz-transform : rotate(45deg); 
+    -ms-transform : rotate(45deg); 
+    -o-transform : rotate(45deg); 
+    transform : rotate(45deg); 
+}
+
+.comparePanle{
+    position: fixed;
+    bottom: 10px;
+    width:60%;
+    
+    left:50%;
+    transform: translateX(-50%);
+   
+    display: none;
+    z-index: 3;
+}
+
+@media only screen and (max-width:1367px){
+    .comparePanle{
+    position: fixed;
+    bottom: 10px;
+    width:90%;
+    margin-left: 2%;
+    display: none;
+    z-index: 3;
+}
+}
+.cursor{
+    cursor: pointer;
+}
+.addedForComparision{
+    position: relative;
+}
+.popup{
+    padding-top:50px !important; 
+}
+
+.lmodPos{
+   width: 100% !important;
+    height: 100% !important;
+    display: none;
+    background-color: #737373;
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+.modPos{
+    padding-top: 25px !important;
+}
+.contentPop{
+    width: 80%;
+    margin-left: 10%;
+    height: 80%;
+}
+.responsiveImg{
+    width: 100%;
+}
+.headerMargin{
+    margin: 0 !important;
+}
+
+.warningModal{
+    position: absolute;
+    width: auto !important;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-family:'Segoe UI Symbol';
+}
+.relPos{
+    position:relative !important;
+}
+
+.w3-hexagonBlue{
+    background-color:#2a96ba;
+    color:white;
+}
+
+.checkBoxalign{
+    position: absolute !important;
+    right: 60px;
+}
+
+
+
+
+
+/* end only demo styles */
+
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    background: white;
+    color: black;
+}
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    color: #bbb;
+}
+
+.checkbox-custom:focus + .checkbox-custom-label, .radio-custom:focus + .radio-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}

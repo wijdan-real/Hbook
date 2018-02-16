@@ -1,0 +1,153 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    text-decoration:none;
+}
+a{
+    text-decoration:none;
+}
+.imgFill1{
+    width: 100%;
+}
+.panwidth{
+    width: 80%;
+}
+.relPos{
+    position: relative;
+}
+.addButtonCircular
+{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.selected{
+    border-style:solid !important;
+    border-color:#d9d9d9 !important;
+    border-width:thin !important;
+    
+}
+.rotateBtn{
+    -webkit-transform : rotate(45deg); 
+    -moz-transform : rotate(45deg); 
+    -ms-transform : rotate(45deg); 
+    -o-transform : rotate(45deg); 
+    transform : rotate(45deg); 
+}
+.comparePanle{
+    position: fixed;
+    bottom: 10px;
+    width:90%;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 3;
+}
+.product {
+    list-style-type: none;
+    border: 1px solid #B5B4B7;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.product .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.product li {
+    border-bottom: 1px solid #B5B4B7;
+    padding: 10px;
+    text-align: center;
+}
+
+.product .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+.modPos{
+    padding-top: 25px ;
+}
+.contentPop{
+    width: 80%;
+    margin-left: 10%;
+    height: 80%;
+}
+.compHeader{
+    min-height: 200px ;
+}
+.compareThumb{
+        height: 150px;
+    }
+.cpu{
+    min-height: 115px ;
+}
+
+.titleMargin{
+    padding: 4px 0px 4px 4px;
+}
+.titleMargin1{
+    padding: 0px 0px 0px 4px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+@media only screen and (max-width:992px) and (min-width:600px){
+  li{
+        font-size: 12px;
+    }  
+}
+@media only screen and (max-width:992px){
+    .titleMargin{
+    padding: 4px 0px 0px 4px;
+}
+    .titleMargin1{
+    padding: 0px 0px 0px 4px;
+     margin-top: 0px !important;
+    margin-bottom: 0px !important;
+        
+}
+    
+}
+@media only screen and (max-width:600px){
+    li{
+        font-size: 8px;
+    }
+    .comparePanle h4{
+        font-size: 15px;
+    }
+    .compareThumb{
+        height: 100px;
+        
+    }
+    .compHeader{
+    min-height: 150px;
+}
+}
+@media only screen and (min-width:993px){
+.comparePanle{
+    position: fixed;
+    bottom: 10px;
+    width:50%;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 3;
+}
+}
