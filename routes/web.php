@@ -10,32 +10,173 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/registration/hotel-profile','registrationController@store');
-Route::post('/login/hotel-profile','sessionsController@store');
-Route::get('/logout','sessionsController@destroy');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/asd', function(){
+    return view('asd');
+
+});
+
 
 Route::get('/location-redirect', function(){
     return view('location-redirect');
 
 });
 
+
+Route::get('/hotel-profile',function (){
+
+    return view('hotel-profile');
+});
+
+Route::get('/hotel-profile1',function (){
+
+    return view('hotel-profile1');
+});
+
 Route::get('/hotel-profile4',function (){
 
     return view('hotel-profile4');
 });
-Route::get('/hme',function (){
 
-   if(auth()->check())
-   {
-return redirect('/hotel-profile4');
-   }
-    else
-    {
-        return view('home2');
-    }
+Route::get('/hotel-profile2',function (){
+
+    return view('hotel-profile2');
 });
 
 
+Route::get('/modal',function (){
+
+    return view('test-modal');
+});
+
+Route::get('/gallery',function (){
+
+    return view('gallery');
+});
+
+Route::get('/regprocess',function (){
+
+    return view('regprocess');
+});
+
+Route::get('/asd',function (){
+
+    return view('asd');
+});
+
+
+Route::get('/star',function (){
+
+    return view('star');
+});
+
+Route::get('/hme',function (){
+
+    return view('home2');
+});
+
+Route::get('/location-redirect1',function (){
+
+    return view('location-redirect1');
+});
+
+
+
+Route::get('/location-redirect2',function (){
+
+    return view('location-redirect2');
+});
+
+
+
+Route::get('/location-redirect3',function (){
+
+    return view('location-redirect3');
+});
+
+
+Route::get('/home3',function (){
+
+    return view('home3');
+});
+
+
+
+Route::get('/homepage',function (){
+
+    return view('homepage');
+});
+
+
+
+Route::get('/hotelcustomer',function (){
+
+    return view('hotelcustomer');
+});
+
+
+Route::get('/hoteladmin',function (){
+
+    return view('hoteladmin');
+});
+
+
+
+Route::get('/userprofile',function (){
+
+    return view('userprofile');
+});
+
+
+Route::get('/usersetting',function (){
+
+    return view('usersetting');
+});
+
+
+Route::get('/storydescription',function (){
+
+    return view('storydescription');
+});
+
+
+Route::get('/bookingform',function(){
+
+    return view('customerbookingform');
+});
+
+
+Route::get('/tripplan',function(){
+
+    return view('tripplan');
+});
+
+
+Route::get('/registration',function(){
+
+    return view('registration');
+});
+
+
+Route::get('/comparison',function (){
+
+    return view('comparisonindex');
+});
+
+
+Route::get('/comparison1',function (){
+
+    return view('comparisonindex2');
+});
 
 
 
