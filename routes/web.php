@@ -91,16 +91,16 @@ Route::get('/location-redirect1',function (){
 
 
 
-Route::get('/location-redirect2',function (){
+Route::get('/location-redirect',function (){
 
-    return view('location-redirect2');
+    return view('locationredirect');
 });
 
 
 
-Route::get('/location-redirect3',function (){
+Route::get('/specificcategory',function (){
 
-    return view('location-redirect3');
+    return view('specificcategory');
 });
 
 
@@ -167,9 +167,15 @@ Route::get('/registration',function(){
 });
 
 
-Route::get('/comparison',function (){
+Route::get('/userregistration',function(){
 
-    return view('comparisonindex');
+    return view('userregistration');
+});
+
+
+Route::get('/hotelregistration',function (){
+
+    return view('hotelregistration');
 });
 
 

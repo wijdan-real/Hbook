@@ -27,6 +27,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 
+   <!-- <link rel="stylesheet" href="/css/hotelregistration/hotelregistration.css">
+    <link rel="stylesheet" href="/css/userregistration/userregistration.css">  -->
+
+
     <link rel="stylesheet" href="/css/landingpage/form-elements.css">
     <link rel="stylesheet" href="/css/landingpage/style.css">
 
@@ -40,6 +44,7 @@
     <link rel="stylesheet" type="text/css" href="/css/landingpage/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/css/landingpage/demo.css" />
     <link rel="stylesheet" type="text/css" href="/css/landingpage/set1.css" />
+    <link rel="stylesheet" type="text/css" href="/css/landingpage/homepage.css">
 
     <!-- Optional theme -->
 
@@ -70,767 +75,6 @@
 
 
 
-        }
-
-
-        .tool-tip {
-            /* border: 1px solid white;
-             border-radius: 16px ; */
-            padding: 5px 15px;
-            color: #2b2b2b;
-            position: relative;
-            opacity: 1;
-            cursor: pointer;
-            margin: 0 10px;
-            text-transform: uppercase;
-        }
-
-        .tool-tip::after {
-            float: left;
-            /*background-color: #323a45;
-            /* background-color:   rgb(255,51,102); */
-            background-color: transparent;
-            opacity: 0.2;
-            /*  border-radius: 2px; */
-            color: black;
-            content: attr(data-tooltip-title) " ";
-            font-weight: normal;
-            width: 140px;
-            border-radius: 10px;
-            height: 90px;
-            font-size: 17px;
-            padding: 5px 8px;
-            text-align: center;
-            text-transform: capitalize;
-        }
-
-        .tool-tip::before {
-            width: 0;
-            height: 0;
-            content: "";
-        }
-
-        .tool-tip::before,
-        .tool-tip::after {
-            position: absolute;
-            transition: opacity 250ms ease 0ms, transform 250ms ease 0ms;
-            transform-style: preserve-3d;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        .tool-tip[data-tooltip-position="bottom"]::after {
-
-            left: 50%;
-        }
-        .tool-tip[data-tooltip-position="bottom"]::after {
-            transform: translate3d(-50%, -10px, 0px);
-            transform: translateY(30px);
-            transform: translateX(-50px);
-            transform-origin: top right;
-        }
-        .tool-tip[data-tooltip-position="bottom"]::after {
-            top: calc(100% + 5px);
-
-
-
-        }
-
-        /* Pointers */
-
-        .tool-tip[data-tooltip-position="bottom"]::before {
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            left: 50%;
-        }
-
-        .tool-tip[data-tooltip-position="bottom"]::before {
-            transform: translate3d(-50%, -10px, 0);
-        }
-
-        .tool-tip[data-tooltip-position="bottom"]::before {
-            border-bottom: 7px solid #323a45;
-            top: calc(98% + 0px);
-        }
-
-
-        .tool-tip:hover::before,
-        .tool-tip:hover::after {
-            opacity: 1;
-            z-index: 100;
-        }
-
-        .tool-tip[data-tooltip-position="bottom"]:hover::before,
-        .tool-tip[data-tooltip-position="bottom"]:hover::after {
-            transform: translate3d(-50%, 0px, 0);
-            margin-right: 50px;
-        }
-
-
-
-        .back-to-top {
-            cursor: pointer;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #353b48;
-            color: white;
-            display:none;
-        }
-
-        .back-to-top:hover{
-
-            background-color:#353b48;
-            color: white;
-        }
-
-
-       /* .row {
-
-            position: relative;
-            margin: 0 auto;
-            padding: 1em 0 4em;
-            max-width: 1300px;
-            list-style: none;
-            text-align: center;
-        }  */
-
-
-
-        .left-inner-addon {
-            position: relative;
-
-        }
-        .left-inner-addon input {
-            padding-left: 80px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-            padding-right: 0px;
-            border-radius: 2px;
-        }
-        .left-inner-addon i {
-            position: absolute;
-            padding: 13px 4px;
-            font-size: 22px;
-            pointer-events: none;
-        }
-
-        /*.left-inner-addon button {
-
-            border-radius: 2px;
-
-        } */
-
-
-      /*  .left-inner-addon button {
-
-
-            left: 400px;
-            padding: 6px 12px;
-            pointer-events: none;
-            font-size: 18px;
-            border: 2px;
-        } */
-
-
-        .right-inner-addon {
-            position: relative;
-        }
-        .right-inner-addon input {
-            padding-right: 30px;
-        }
-        .right-inner-addon i {
-            position: absolute;
-            right: 0px;
-            padding: 10px 12px;
-            pointer-events: none;
-        }
-
-
-
-        .grid1 {
-            position: relative;
-            clear: both;
-            margin: 0 auto;
-            padding: 1em 0 4em;
-            max-width: 1300px;
-            list-style: none;
-            text-align: center;
-            top:20px;
-        }
-
-
-        .ct-btn-scroll {
-            width: 54px;
-            height: 54px;
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            margin: auto;
-           /* color: #0b2e13;;
-            border: 2px solid; */
-            padding-top: 0px;
-            z-index: 9;
-            border-radius: 60%;
-            -webkit-transition: background-color 0.25s ease-in-out;
-            transition: background-color 0.25s ease-in-out;
-        }
-
-
-
-        .vertical-divider {
-            position: absolute;
-            z-index: 10;
-            top: 50%;
-            left: 50%;
-            margin: 0;
-            padding: 0;
-            width: auto;
-            height: 50%;
-            line-height: 0;
-            text-align:center;
-            text-transform: uppercase;
-            transform: translateX(-50%);
-        }
-
-        .vertical-divider:before,
-        .vertical-divider:after {
-            position: absolute;
-            left: 50%;
-            content: '';
-            z-index: 9;
-            border-left: 1px solid rgba(34,36,38,.15);
-            border-right: 1px solid rgba(255,255,255,.1);
-            width: 0;
-            height: calc(100% - 1rem);
-        }
-
-        .row-divided > .vertical-divider {
-            height: calc(50% - 1rem);
-        }
-
-        .vertical-divider:before {
-            top: -100%;
-        }
-
-        .vertical-divider:after {
-            top: auto;
-            bottom: 0;
-        }
-
-        .row-divided {
-            position:relative;
-        }
-
-        .row-divided > [class^="col-"],
-        .row-divided > [class*=" col-"] {
-            padding-left: 30px;  /* gutter width (give a little extra room) 2x default */
-            padding-right: 30px; /* gutter width (give a little extra room) 2x default */
-        }
-
-
-
-
-        /* Arrow Button
-	-----------------------------------*/
-        .container-arrow{
-            margin-top: -20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color:white;
-            display: inline-block;
-            text-align: center;
-            line-height: 20px;
-            border-radius: 60%;
-            position: absolute;
-            bottom:0;left:70px;
-            z-index: 10;
-            width:35%;
-            padding-bottom: 0px;
-            cursor: pointer;
-            font-size: 12px;
-          /*  background-color: rgb(60,62,70); */
-        }
-        .container-arrow:hover,
-        .container-arrow:focus{text-decoration: none;}
-
-        /* Arrow Bouncing */
-        .container-arrow span{  display: inline-block; font-size: 80px;	 animation: .7s down  infinite alternate; -webkit-animation: .7s down infinite alternate; }
-        /***Animation Arrow down***/
-        @keyframes  down{ 0%{transform:translateY(0px)} 100%{transform:translateY(15px)} }
-        @-webkit-keyframes down{ 0%{-webkit-transform:translateY(0px)} 100%{-webkit-transform:translateY(15px)} }
-
-
-
-
-        /* sets positioning */
-        .arrow {
-            width: 60px;
-            height: 82px;
-            position: absolute;
-            left: 50%;
-            margin-left: -30px;
-            bottom: 10px;
-        }
-
-        /* sets arrow style */
-        .arrow path {
-           /* stroke: #119a12; */
-
-            stroke:#c44569;
-            fill: transparent;
-            stroke-width: 4px;
-            animation: arrow 2s infinite;
-            -webkit-animation: arrow 2s infinite;
-        }
-
-        @keyframes  arrow{
-            0% {opacity:0}
-            25% {opacity:1}
-            75% {opacity:0}
-            100% {opacity:0}
-        }
-
-        @-webkit-keyframes arrow{
-            0% {opacity:0}
-            25% {opacity:1}
-            75% {opacity:0}
-            100% {opacity:0}
-        }
-
-        .arrow path.a1{
-            animation-delay:-1s;
-            -webkit-animation-delay:-1s;
-        }
-
-        .arrow path.a2{
-            animation-delay:-.5s;
-            -webkit-animation-delay:-.5s;
-        }
-
-        .arrow path.a3{
-            animation-delay:0s;
-            -webkit-animation-delay:0s;
-        }
-
-
-        #myNavbar{}
-
-        .fa fa-user-circle-o { border: none; }
-
-        .fa fa-registered { border: none; }
-
-        .fa {
-
-            border: white !important;
-        }
-
-        .rightlink {
-
-          border: none;
-        }
-
-        .social:hover {
-            opacity:1;
-            -webkit-transform: scale(1.1);
-            -moz-transform: scale(1.1);
-            -o-transform: scale(1.1);
-        }
-
-        .social {
-            opacity:0.9;
-            -webkit-transform: scale(0.8);
-            -moz-transform: scale(0.8);
-            -o-transform: scale(0.8);
-            -webkit-transition-duration: 0.5s;
-            -moz-transition-duration: 0.5s;
-            -o-transition-duration: 0.5s;
-        }
-
-        .social-fb {
-            color: #3B5998;
-        }
-
-        .social-gp {
-            color: #d34836;
-        }
-
-        .social-tw {
-            color: #4099FF;
-        }
-
-        .social-ig {
-            color: #cd486b;
-        }
-
-
-        .row.vdivide [class*='col-']:not(:last-child):after {
-            background: #e0e0e0;
-            width: 2px;
-            content: "";
-            display:block;
-            position: absolute;
-            top:20px;
-            bottom: 0;
-            right: 0;
-           /* min-height: 90px; */
-            height: 355px;
-        }
-
-
-        #search {
-            position: relative;
-            border-radius: 2px;
-            padding-bottom: 15px;
-            top: 25px;
-            height: 40px;
-            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
-            box-sizing: border-box;
-
-
-
-           /* box-sizing: border-box;
-
-            bottom: 10px; */
-        }
-
-        #search-input {
-            padding-left: 60px;
-            padding-top: 5px;
-            font-size: 18px;
-
-        }
-
-        #search-icon {
-            position: absolute;
-            padding: 15px 10px;
-            margin-left: -210px;
-            font-size: 22px;
-
-        }
-
-
-        #search1 {
-            position: relative;
-            padding-bottom: 15px;
-            border-radius: 2px;
-            box-sizing: border-box;
-            top: 25px;
-            height: 40px;
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
-
-            /* box-sizing: border-box;
-
-             bottom: 10px; */
-        }
-
-        #search-input1 {
-            padding-left: 60px;
-            padding-top: 5px;
-            font-size: 18px;
-        }
-
-        #search-icon1 {
-            position: absolute;
-            padding: 15px 10px;
-            margin-left: -210px;
-            font-size: 22px;
-
-        }
-
-        #search2 {
-            position: relative;
-            padding-bottom: 15px;
-            border-radius: 2px;
-            bottom: 3px;
-            height: 40px;
-           /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
-            box-sizing: border-box;
-
-
-
-            /* box-sizing: border-box;
-
-             bottom: 10px; */
-        }
-
-        #search-input2 {
-            padding-left: 60px;
-            padding-top: 5px;
-            font-size: 18px;
-        }
-
-        #search-icon2 {
-            position: absolute;
-            padding: 15px 10px;
-            margin-left: -210px;
-            font-size: 22px;
-
-        }
-
-        #search3 {
-            position: relative;
-            border-radius: 2px;
-            padding-bottom: 15px;
-            bottom: 3px;
-            height: 40px;
-            box-sizing: border-box;
-            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
-      /*      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-            /* box-sizing: border-box;
-
-
-             bottom: 10px; */
-        }
-
-        #search-input3 {
-            padding-left: 60px;
-            padding-top: 5px;
-            font-size: 18px;
-        }
-
-        #search-icon3 {
-            position: absolute;
-            padding: 15px 10px;
-            margin-left: -210px;
-            font-size: 22px;
-
-        }
-
-     /*   #search1 {
-            position: relative;
-            padding-bottom: 15px;
-            bottom: 5px;
-
-        }
-
-        #search-input1 {
-            padding-left: 60px;
-        }
-
-        #search-icon1 {
-            position: absolute;
-            padding: 14px 10px;
-            margin-left: -220px;
-
-        }
-
-        #search2 {
-            position: relative;
-            bottom: 5px;
-            padding-bottom: 15px;
-
-
-
-        }
-
-        #search-input2 {
-            padding-left: 60px;
-        }
-
-        #search-icon2 {
-            position: absolute;
-            padding: 14px 10px;
-            margin-left: -220px;
-
-        }
-
-
-        #search3 {
-            position: relative;
-            bottom: 5px;
-            padding-bottom: 15px;
-
-
-
-        }
-
-        #search-input3 {
-            padding-left: 60px;
-        }
-
-        #search-icon3 {
-            position: absolute;
-            padding: 14px 10px;
-            margin-left: -220px;
-
-        } */
-
-
-        .btn1{
-
-         /*   display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
-
-
-            height: 50px;
-            width: 205px;
-            vertical-align: middle;
-
-            font-kerning: none;
-
-            white-space: nowrap;
-          /*  color: #7952b3;
-            border-color: #7952b3;
-            background-color: white; */
-
-            background-color:white;
-            border-color:
-                    #c44569;
-            color:
-                    #c44569;
-
-          /*  border-color: #353b48;
-            color:#353b48; */
-
-
-            line-height: 1.5;
-            border-radius: .45rem;
-            /*padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 60px;
-            padding-right: 60px; */
-           /* font-size: 2.20rem;
-            font-weight: 500; */
-            font-size: large;
-            font-weight: 600;
-        }
-
-
-        .btn1:active ,.btn1:hover {
-
-           /* background-color: #7952b3;
-            color: white; */
-
-            background-color: #c44569;
-
-            color:white;
-            border-color:#c44569;
-        }
-
-        .inline-p{display: inline;}
-
-        .brand1 {
-            /*color: white; */
-            float: left;
-            color: #353b48;
-        }
-        .brand2 {
-      /*  hsl(215,100,25); */
-            float: right;
-            color:  #c44569;
-
-        }
-
-
-        i{
-            color: #353b48;
-        }
-
-        .fa {
-            color: #353b48;
-        }
-
-
-
-        /*.btn-bd-primary:active,.btn-bd-primary:hover
-        {
-            font-weight: 500;
-            color: #7952b3;
-            border-color: #7952b3;
-        } */
-
-
-        div#frm *{display:inline}
-
-        div#frm1 *{display:inline}
-
-
-        html::-webkit-scrollbar {
-            width: 1.2em;
-        }
-
-      /*  html::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        }
-
-        html::-webkit-scrollbar-thumb {
-            background-color: darkgrey;
-            outline: 1px solid slategrey;
-        } */
-
-         /* STYLE 1
-        html::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-            background-color: #555;
-        }
-
-        html::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            background-color: #F5F5F5;
-        }  */
-
-
-
-
-
-
-
-        /* STYLE 11 */
-        html::-webkit-scrollbar-track {
-            border-radius: 0px;
-            background: rgba(0,0,0,0.1);
-            border: 1px solid #ccc;
-        }
-
-        html::-webkit-scrollbar-thumb {
-            border-radius: 0px;
-           /* background: linear-gradient(left, #fff, #e4e4e4); */
-            background: #353b48;
-            border: 1px solid #353b48;
-            border-radius: 1px;
-        }
-
-        html::-webkit-scrollbar-thumb:hover {
-            background: #353b48;
-        }
-
-        html::-webkit-scrollbar-thumb:active {
-            background: linear-gradient(left, #22ADD4, #1E98BA);
-        }
-
-
-        .classWithPad {
-
-
-            margin:0px;
-            padding-right:45px;
-        }
-
-
-        .classWithPad1 {
-
-
-            margin:0px;
-            padding-left:45px;
         }
 
 
@@ -912,12 +156,12 @@
                 <ul style=""  class="nav navbar-nav navbar-right">
 
                     <li >
-                        <a style=" color: #353b48;" class="tool-tip" href="registration" target="_self" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
-                            <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Member Login</b></a>
+                        <a style=" color: #353b48;" href="userregistration" class="tool-tip"  data-tooltip-title="Signup New User" data-tooltip-position="bottom">
+                            <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Register User</b></a>
                     </li>
 
                     <li>
-                        <a style="  color: #353b48;" class="tool-tip"  data-toggle="modal" data-target="#myModal1" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
+                        <a style="  color: #353b48;" href="hotelregistration" class="tool-tip" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
                             <i class="fa fa-registered fa-3x"></i> <b style="font-size: 12px;">Register Hotel</b></a>
                     </li>
 
@@ -1445,11 +689,11 @@
    <!-- Modal For Registartion of Hotels -->
 
 
-    <!-- Modal  -->
+    <!-- Modal
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
-            <!-- Modal content  -->
+            <!-- Modal content
             <div class="modal-content">
 
                 <div class="modal-body">
@@ -1460,7 +704,7 @@
             </div>
 
         </div>
-    </div>    <!-- Modal ends here -->
+    </div>   --> <!--  Modal ends here -->
 
     <!--<div class="modal fade text-center" id="myModal">
         <div class="modal-dialog">
@@ -1468,6 +712,125 @@
             </div>
         </div>
     </div>  -->
+
+
+    <!-- User Modal -->
+    <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%);; border: none;" class="modal" id="myModal1" role="dialog">
+        <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%); border: none;" class="modal-dialog modal-lg">
+
+            <!-- Modal content-->   <!-- <div class="modal-body"> -->
+            <div style="border: none; border-radius: 0%; background: white; " class="modal-content">
+
+
+
+
+                <div id="login-box">
+                    <div class="left">
+                        <h1>Sign up for User</h1>
+
+                        <input type="text" name="username" placeholder="Username" />
+                        <input type="text" name="email" placeholder="E-mail" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <input type="password" name="password2" placeholder="Retype password" />
+
+                        <input type="submit" name="signup_submit" value="Sign me up" />
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+
+                    <div class="right">
+
+
+                        <span><h1>Sign in User</h1></span>
+
+                        <input type="text" name="email" placeholder="E-mail" />
+                        <input type="password" name="password" placeholder="Password" />
+
+                        <input type="submit" name="signup_submit" value="Sign in" />
+
+                        <span style="color: #0d0d0d; font-size: 28px; text-align: left;" class="loginwith">Sign in with</span>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+                        <br>
+
+                        <button class="social-signin facebook">Log in with facebook</button>
+                        <button class="social-signin twitter">Log in with Twitter</button>
+                        <!--<button class="social-signin google">Log in with Google+</button>-->
+
+                    </div>
+
+                    <div class="or">OR</div>
+                </div>
+
+
+
+                <!--</div>-->
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--   Hotel Modal -->
+    <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%);; border: none;" class="modal" id="myModal" role="dialog">
+        <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%); border: none;" class="modal-dialog modal-lg">
+
+            <!-- Modal content-->   <!-- <div class="modal-body"> -->
+            <div style="border: none; border-radius: 0%; background: white; " class="modal-content">
+
+                <div id="login-box">
+                    <div class="left">
+                        <h1>Sign up for Hotel</h1>
+
+                        <input class="inp1" type="text" name="hotelname" placeholder="Hotel Name" />
+                        <input class="inp1" type="text" name="hotelemail" placeholder="Hotel E-mail" />
+                        <input class="inp1" type="password" name="hotelpassword" placeholder="Hotel Password" />
+                        <input class="inp1" type="password" name="hotelpassword2" placeholder="Retype password" />
+
+                        <input class="inp2" type="submit" name="hotelsignup_submit" value="Hotel Signup" />
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+
+                    <div style="" class="right">
+                        <span class="loginwith">Sign in<br /></span>
+
+                        <h1>Sign in to your Hotel</h1>
+
+
+
+                        <input class="inp1" type="text" name="hotelemail" placeholder="Hotel E-mail" />
+                        <input class="inp1" type="password" name="hotelpassword" placeholder="Password" />
+
+                        <input class="inp2" type="submit" name="hotelsignup_submit" value="Sign in" />
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        <!-- <button class="social-signin facebook">Log in with facebook</button>
+                         <button class="social-signin twitter">Log in with Twitter</button>
+                         <button class="social-signin google">Log in with Google+</button> -->
+                    </div>
+                    <div class="or">OR</div>
+
+                </div>
+
+                <!--</div>-->
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
 
 
 
