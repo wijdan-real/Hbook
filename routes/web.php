@@ -166,14 +166,7 @@ Route::get('/registration',function(){
     return view('registration');
 });
 
-
-Route::get('/userregistration',function(){
-
-    return view('userregistration');
-});
-
-
-Route::get('/hotelregistration',function (){
+Route::get('/hotelregistration',function(){
 
     return view('hotelregistration');
 });

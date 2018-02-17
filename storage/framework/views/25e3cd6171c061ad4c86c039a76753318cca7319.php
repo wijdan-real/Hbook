@@ -156,7 +156,7 @@
                 <ul style=""  class="nav navbar-nav navbar-right">
 
                     <li >
-                        <a style=" color: #353b48;" href="userregistration" class="tool-tip"  data-tooltip-title="Signup New User" data-tooltip-position="bottom">
+                        <a style=" color: #353b48;" href="registration" class="tool-tip"  data-tooltip-title="Signup New User" data-tooltip-position="bottom">
                             <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Register User</b></a>
                     </li>
 
