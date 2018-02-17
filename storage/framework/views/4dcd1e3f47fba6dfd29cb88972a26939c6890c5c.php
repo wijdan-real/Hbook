@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HBook</title>
+    <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -358,7 +358,7 @@
         /* Arrow Bouncing */
         .container-arrow span{  display: inline-block; font-size: 80px;	 animation: .7s down  infinite alternate; -webkit-animation: .7s down infinite alternate; }
         /***Animation Arrow down***/
-        @keyframes down{ 0%{transform:translateY(0px)} 100%{transform:translateY(15px)} }
+        @keyframes  down{ 0%{transform:translateY(0px)} 100%{transform:translateY(15px)} }
         @-webkit-keyframes down{ 0%{-webkit-transform:translateY(0px)} 100%{-webkit-transform:translateY(15px)} }
 
 
@@ -385,7 +385,7 @@
             -webkit-animation: arrow 2s infinite;
         }
 
-        @keyframes arrow{
+        @keyframes  arrow{
             0% {opacity:0}
             25% {opacity:1}
             75% {opacity:0}

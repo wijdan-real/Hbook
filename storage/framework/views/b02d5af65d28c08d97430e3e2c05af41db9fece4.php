@@ -138,7 +138,8 @@
 	                            </div>
 	                            <div class="form-bottom">
 				                    <form role="form" action="/registration" method="post" class="registration-form">
-										{{csrf_field()}}
+										<?php echo e(csrf_field()); ?>
+
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name</label>
 				                        	<input type="text" name="firstname" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required>
@@ -162,7 +163,7 @@
 
 										</div>
 				                        <button type="submit" class="btn">Sign me up!</button>
-										@include('layout.errors')
+										<?php echo $__env->make('layout.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 				                    </form>
 			                    </div>
                         	</div>

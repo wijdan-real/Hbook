@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @if(Auth::check())
-    <title>{{$userInfo->firstname}}</title>
-    @endif
+    <?php if(Auth::check()): ?>
+    <title><?php echo e($userInfo->firstname); ?></title>
+    <?php endif; ?>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -240,9 +240,9 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    @if(Auth::check())
+                    <?php if(Auth::check()): ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                    @endif
+                    <?php endif; ?>
                         <ul class="dropdown-menu">
                         <li align="center" class="well">
                             <div><img class="img-responsive" style="padding:2%;" src="https://bootdey.com/img/Content/avatar/avatar1.png"/><a class="change" href="">Change Picture</a></div>
@@ -261,7 +261,7 @@
 <div class="container target">
     <div class="row">
         <div class="col-sm-10">
-            <h1 class="">{{$userInfo->firstname}}</h1>
+            <h1 class=""><?php echo e($userInfo->firstname); ?></h1>
 
             <button type="button" class="btn btn-success">Edit Settings</button>  <button type="button" class="btn btn-info">Change Profile Picture</button>
             <br>
