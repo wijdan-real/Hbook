@@ -45,9 +45,7 @@ Route::get('/hoteladmin',function (){
 
 
 
-Route::get('/userprofile',function(){
-    return view('userprofile');
-});
+
 
 
 
