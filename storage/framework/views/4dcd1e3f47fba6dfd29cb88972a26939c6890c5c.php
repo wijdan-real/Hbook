@@ -27,13 +27,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 
-<<<<<<< HEAD
-   <!-- <link rel="stylesheet" href="/css/hotelregistration/hotelregistration.css">
-    <link rel="stylesheet" href="/css/userregistration/userregistration.css">  -->
-
-
-=======
->>>>>>> branch1
     <link rel="stylesheet" href="/css/landingpage/form-elements.css">
     <link rel="stylesheet" href="/css/landingpage/style.css">
 
@@ -47,10 +40,6 @@
     <link rel="stylesheet" type="text/css" href="/css/landingpage/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/css/landingpage/demo.css" />
     <link rel="stylesheet" type="text/css" href="/css/landingpage/set1.css" />
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="/css/landingpage/homepage.css">
-=======
->>>>>>> branch1
 
     <!-- Optional theme -->
 
@@ -84,8 +73,6 @@
         }
 
 
-<<<<<<< HEAD
-=======
         .tool-tip {
             /* border: 1px solid white;
              border-radius: 16px ; */
@@ -847,7 +834,6 @@
         }
 
 
->>>>>>> branch1
 
     </style>
 
@@ -926,21 +912,12 @@
                 <ul style=""  class="nav navbar-nav navbar-right">
 
                     <li >
-<<<<<<< HEAD
-                        <a style=" color: #353b48;" href="registration" class="tool-tip"  data-tooltip-title="Signup New User" data-tooltip-position="bottom">
-                            <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Register User</b></a>
-                    </li>
-
-                    <li>
-                        <a style="  color: #353b48;" href="hotelregistration" class="tool-tip" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
-=======
                         <a style=" color: #353b48;" class="tool-tip" href="registration" target="_self" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
                             <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Member Login</b></a>
                     </li>
 
                     <li>
                         <a style="  color: #353b48;" class="tool-tip"  data-toggle="modal" data-target="#myModal1" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
->>>>>>> branch1
                             <i class="fa fa-registered fa-3x"></i> <b style="font-size: 12px;">Register Hotel</b></a>
                     </li>
 
@@ -1468,19 +1445,11 @@
    <!-- Modal For Registartion of Hotels -->
 
 
-<<<<<<< HEAD
-    <!-- Modal
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content
-=======
     <!-- Modal  -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content  -->
->>>>>>> branch1
             <div class="modal-content">
 
                 <div class="modal-body">
@@ -1491,11 +1460,7 @@
             </div>
 
         </div>
-<<<<<<< HEAD
-    </div>   --> <!--  Modal ends here -->
-=======
     </div>    <!-- Modal ends here -->
->>>>>>> branch1
 
     <!--<div class="modal fade text-center" id="myModal">
         <div class="modal-dialog">
@@ -1505,128 +1470,6 @@
     </div>  -->
 
 
-<<<<<<< HEAD
-    <!-- User Modal -->
-    <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%);; border: none;" class="modal" id="myModal1" role="dialog">
-        <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%); border: none;" class="modal-dialog modal-lg">
-
-            <!-- Modal content-->   <!-- <div class="modal-body"> -->
-            <div style="border: none; border-radius: 0%; background: white; " class="modal-content">
-
-
-
-
-                <div id="login-box">
-                    <div class="left">
-                        <h1>Sign up for User</h1>
-
-                        <input type="text" name="username" placeholder="Username" />
-                        <input type="text" name="email" placeholder="E-mail" />
-                        <input type="password" name="password" placeholder="Password" />
-                        <input type="password" name="password2" placeholder="Retype password" />
-
-                        <input type="submit" name="signup_submit" value="Sign me up" />
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                    </div>
-
-                    <div class="right">
-
-
-                        <span><h1>Sign in User</h1></span>
-
-                        <input type="text" name="email" placeholder="E-mail" />
-                        <input type="password" name="password" placeholder="Password" />
-
-                        <input type="submit" name="signup_submit" value="Sign in" />
-
-                        <span style="color: #0d0d0d; font-size: 28px; text-align: left;" class="loginwith">Sign in with</span>
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-
-                        <br>
-
-                        <button class="social-signin facebook">Log in with facebook</button>
-                        <button class="social-signin twitter">Log in with Twitter</button>
-                        <!--<button class="social-signin google">Log in with Google+</button>-->
-
-                    </div>
-
-                    <div class="or">OR</div>
-                </div>
-
-
-
-                <!--</div>-->
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <!--   Hotel Modal -->
-    <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%);; border: none;" class="modal" id="myModal" role="dialog">
-        <div style="background: linear-gradient(to top left, #9900ff 0%, #ff0066 98%); border: none;" class="modal-dialog modal-lg">
-
-            <!-- Modal content-->   <!-- <div class="modal-body"> -->
-            <div style="border: none; border-radius: 0%; background: white; " class="modal-content">
-
-                <div id="login-box">
-                    <div class="left">
-                        <h1>Sign up for Hotel</h1>
-
-                        <input class="inp1" type="text" name="hotelname" placeholder="Hotel Name" />
-                        <input class="inp1" type="text" name="hotelemail" placeholder="Hotel E-mail" />
-                        <input class="inp1" type="password" name="hotelpassword" placeholder="Hotel Password" />
-                        <input class="inp1" type="password" name="hotelpassword2" placeholder="Retype password" />
-
-                        <input class="inp2" type="submit" name="hotelsignup_submit" value="Hotel Signup" />
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                    </div>
-
-                    <div style="" class="right">
-                        <span class="loginwith">Sign in<br /></span>
-
-                        <h1>Sign in to your Hotel</h1>
-
-
-
-                        <input class="inp1" type="text" name="hotelemail" placeholder="Hotel E-mail" />
-                        <input class="inp1" type="password" name="hotelpassword" placeholder="Password" />
-
-                        <input class="inp2" type="submit" name="hotelsignup_submit" value="Sign in" />
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        <!-- <button class="social-signin facebook">Log in with facebook</button>
-                         <button class="social-signin twitter">Log in with Twitter</button>
-                         <button class="social-signin google">Log in with Google+</button> -->
-                    </div>
-                    <div class="or">OR</div>
-
-                </div>
-
-                <!--</div>-->
-
-
-
-            </div>
-
-
-
-        </div>
-    </div>
-
-
-
-=======
->>>>>>> branch1
 
     <!-- Sign in to your Hotel -->
 

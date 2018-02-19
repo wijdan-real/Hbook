@@ -70,7 +70,11 @@
                             	<p>
 	                            	This is a free responsive <strong>"login and register forms"</strong> template made with Bootstrap. 
 	                            	Download it on <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a>, 
+<<<<<<< HEAD
 	                            	customize and use it as you like! <a href="homepage" class="btn btn-primary">Return to Home</a>
+=======
+	                            	customize and use it as you like! <a href="index.html" class="btn btn-primary">Return to Home</a>
+>>>>>>> branch1
                             	</p>
                             </div>
                         </div>
@@ -93,11 +97,19 @@
 				                    <form role="form" action="" method="post" class="login-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
+<<<<<<< HEAD
 				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" required>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
 				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+=======
+				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+>>>>>>> branch1
 				                        </div>
 				                        <button type="submit" class="btn">Sign in!</button>
 				                    </form>
@@ -140,6 +152,7 @@
 				                    <form role="form" action="" method="post" class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name</label>
+<<<<<<< HEAD
 				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name" required>
 				                        </div>
 				                        <div class="form-group">
@@ -149,11 +162,26 @@
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
 				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email" required>
+=======
+				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+>>>>>>> branch1
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
 				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
+<<<<<<< HEAD
 				                        				class="form-about-yourself form-control" id="form-about-yourself" required></textarea>
+=======
+				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+>>>>>>> branch1
 				                        </div>
 				                        <button type="submit" class="btn">Sign me up!</button>
 				                    </form>
