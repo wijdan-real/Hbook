@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php if(Auth::check()): ?>
+<?php if(Auth::check()): ?>
     <title><?php echo e($userInfo->firstname); ?></title>
-    <?php endif; ?>
 
+<?php endif; ?>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
@@ -247,7 +247,8 @@
                         <li align="center" class="well">
                             <div><img class="img-responsive" style="padding:2%;" src="https://bootdey.com/img/Content/avatar/avatar1.png"/><a class="change" href="">Change Picture</a></div>
                             <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-lock"></span> Security</a>
-                            <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+
+                            <a  href="/logout"  class="btn btn-sm btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -276,10 +277,14 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> 2.13.2014</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> <?php if(Auth::check()): ?><?php echo e($userInfo->created_at); ?><?php endif; ?></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span> Joseph
-                    Doe</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
+                    <?php if(Auth::check()): ?>
+                    <?php echo e($userInfo->firstname); ?><?php echo e($userInfo->lastname); ?>
+
+                        <?php endif; ?>
+                    </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
 
                 </li>

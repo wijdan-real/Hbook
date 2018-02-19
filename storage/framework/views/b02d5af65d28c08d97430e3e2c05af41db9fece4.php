@@ -137,7 +137,7 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="/registration" method="post" class="registration-form">
+				                    <form role="form" action="/userprofile" method="post" class="registration-form">
 										<?php echo e(csrf_field()); ?>
 
 				                    	<div class="form-group">

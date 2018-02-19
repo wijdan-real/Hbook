@@ -50,16 +50,16 @@ class MemberRegistrationController extends Controller
        );
        $member = Member::create(request(['firstname','lastname','email','password']));
 
-        //return $member;
+
 
         auth()->login($member);
 
 
-        $userInfo = Member::find(Auth::id());
+        $userInfo = $member->find(Auth::id());
 
-        return view('/userprofile',compact('userInfo'));
+        return view ('userprofile', compact('userInfo'));
 
-
+       // return redirect('/userprofile')->with('userInfo', 'Profile page!');
     }
 
     /**
@@ -68,9 +68,11 @@ class MemberRegistrationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
+
+
     }
 
     /**

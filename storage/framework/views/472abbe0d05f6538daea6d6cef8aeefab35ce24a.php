@@ -247,7 +247,8 @@
                         <li align="center" class="well">
                             <div><img class="img-responsive" style="padding:2%;" src="https://bootdey.com/img/Content/avatar/avatar1.png"/><a class="change" href="">Change Picture</a></div>
                             <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-lock"></span> Security</a>
-                            <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+
+                            <a  href="/logout"  class="btn btn-sm btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -276,10 +277,12 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> 2.13.2014</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> <?php echo e($userInfo->created_at); ?></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span> Joseph
-                    Doe</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
+                    <?php echo e($userInfo->firstname); ?><?php echo e($userInfo->lastname); ?>
+
+                    </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
 
                 </li>

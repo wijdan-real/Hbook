@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MemberSessionsController extends Controller
+class HottlerRegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class MemberSessionsController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -78,9 +78,8 @@ class MemberSessionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        auth()->logout();
-        return redirect('/homepage');
+        //
     }
 }

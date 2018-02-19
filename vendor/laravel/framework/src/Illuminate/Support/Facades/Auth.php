@@ -3,7 +3,7 @@
 namespace Illuminate\Support\Facades;
 
 /**
- * @method static mixed guard(string|null $name = null)
+ * @method static mixed guard(stringnull $name = null)
  * @method static void shouldUse(string $name);
  * @method static bool check()
  * @method static bool guest()

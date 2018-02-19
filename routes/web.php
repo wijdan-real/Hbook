@@ -1,9 +1,10 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('homepage');
-});
+    Route::get('/', function () {
+        return view('homepage');
+    });
+
 
 
 
@@ -44,16 +45,12 @@ Route::get('/hoteladmin',function (){
 
 
 
-Route::get('/userprofile',function (){
-
+Route::get('/userprofile',function(){
     return view('userprofile');
 });
 
 
-Route::get('/usersetting',function (){
 
-    return view('usersetting');
-});
 
 
 Route::get('/storydescription',function (){
@@ -75,7 +72,7 @@ Route::get('/tripplan',function(){
 
 
 Route::get('/registration','MemberRegistrationController@create');
-Route::post('/registration','MemberRegistrationController@store');
+Route::post('/userprofile','MemberRegistrationController@store');
 //Route::post('/logout','MemberSessionsController@destroy');
 Route::get('/logout','MemberSessionsController@destroy');
 

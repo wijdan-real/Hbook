@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHotellersTable extends Migration
+class CreateHottlersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateHotellersTable extends Migration
      */
     public function up()
     {
-        Schema::create('hotllers', function (Blueprint $table) {
+        Schema::create('hottlers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateHotellersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotellers');
+        Schema::dropIfExists('hottlers');
     }
 }

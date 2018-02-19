@@ -137,7 +137,7 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="/registration" method="post" class="registration-form">
+				                    <form role="form" action="/userprofile" method="post" class="registration-form">
 										{{csrf_field()}}
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name</label>
