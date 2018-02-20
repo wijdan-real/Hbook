@@ -44,13 +44,6 @@ Route::get('/hoteladmin',function (){
 });
 
 
-
-
-
-
-
-
-
 Route::get('/storydescription',function (){
 
     return view('storydescription');
@@ -61,6 +54,13 @@ Route::get('/bookingform',function(){
 
     return view('customerbookingform');
 });
+
+
+Route::get('/hotelregistration',function(){
+
+    return view ('hotelregistration');
+});
+Route::post('/hotelprofile','HottlerRegistrationController@store');
 
 
 Route::get('/tripplan',function(){

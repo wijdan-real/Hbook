@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php if(Auth::check()): ?>
-    <title><?php echo e($userInfo->firstname); ?></title>
+    <title></title>
 
 <?php endif; ?>
     <!-- Latest compiled and minified CSS -->
@@ -215,6 +215,141 @@
 
 
 
+        #userbio{
+            left:10%;
+            top:20%;
+           /* width:500px;
+            height:500px; */
+        }
+
+
+
+        .userbio{
+
+            margin-bottom: 15px;
+            width:570px;
+        height:130px;}
+
+
+        .userbiobtn{
+            width:50px;
+            height:30px;
+            padding:5px;
+            position:relative;
+            background:transparent;
+            border:none;
+            border:hidden;
+            outline-border:none;
+        }
+
+
+        .userbiobtn:hover,.userbiobtn:active {
+            cursor: pointer;
+            border:none;
+            outline:none;
+        }
+
+
+        .profilepic {
+           /* max-width: 360px; */
+            margin: 10px auto;
+            margin-left:0px;
+            padding-left:50px;
+            border-raduis:3%;
+            width: 360px;
+
+        }
+        h1
+        {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0 20px;
+        }
+        h1 small
+        {
+            display: block;
+            font-size: 15px;
+            padding-top: 8px;
+            color: gray;
+        }
+        .avatar-upload
+        {
+            position: relative;
+            max-width: 205px;
+            margin-top: 50px auto;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            right:70px;
+        }
+        .avatar-upload .avatar-edit
+        {
+            position: absolute;
+            right: 75px;
+            z-index: 1;
+            top: 40px;
+        }
+        .avatar-upload .avatar-edit input
+        {
+            display: none;
+
+        }
+        .avatar-upload .avatar-edit input + label
+        {
+            top: 87px;
+            /*display: inline-block; */
+            width: 170px;
+            height: 40px;
+            padding-left: 0px;
+            padding-right:40px;
+            position: absolute;
+            left:5px;
+            right:0;
+            margin-bottom:0;
+            border-radius: 2%;
+            background: #FFFFFF;
+            border: 1px solid transparent;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            font-weight: normal;
+            transition: all 0.2s ease-in-out;
+        }
+        .avatar-upload .avatar-edit input + label:hover
+        {
+            background: #f1f1f1;
+            border-color: #d6d6d6;
+        }
+        .avatar-upload .avatar-edit input + label:after
+        {
+            content: "\f040";
+            font-family: 'FontAwesome';
+            color: #757575;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: auto;
+        }
+        .avatar-upload .avatar-preview
+        {
+            width: 180px;
+            height: 170px;
+            position: relative;
+            border-radius:0%;
+            border: 3px solid #F8F8F8;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        }
+        .avatar-upload .avatar-preview > div
+        {
+            width: 100%;
+            height: 100%;
+            border-radius: 0%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
 
     </style>
 
@@ -261,13 +396,35 @@
 <hr class="">
 <div class="container target">
     <div class="row">
-        <div class="col-sm-10">
-            <h1 class=""><?php echo e($userInfo->firstname); ?></h1>
+        <div class="col-sm-5">
+            <h1 class=""></h1>
 
             <button type="button" class="btn btn-success">Edit Settings</button>  <button type="button" class="btn btn-info">Change Profile Picture</button>
             <br>
         </div>
-        <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
+        <div class="col-sm-offset-5 col-sm-2">
+           <!-- <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>-->
+
+           <!-- <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>-->
+
+                <div class="profilepic">
+
+                    <div style="text-align: center;">
+                        <div class="avatar-upload">
+                            <div class="avatar-edit">
+                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <label for="imageUpload"></label>
+                            </div>
+                            <div class="avatar-preview">
+                                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
 
         </div>
     </div>
@@ -277,12 +434,11 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> <?php if(Auth::check()): ?><?php echo e($userInfo->created_at); ?><?php endif; ?></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> <?php if(Auth::check()): ?><?php endif; ?></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
                     <?php if(Auth::check()): ?>
-                    <?php echo e($userInfo->firstname); ?><?php echo e($userInfo->lastname); ?>
-
+                        
                         <?php endif; ?>
                     </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
@@ -326,7 +482,9 @@
         <!--/col-3-->
         <div class="col-sm-9" contenteditable="false" style="">
             <div class="panel panel-default">
-                <div class="panel-heading">Username Bio</div>
+                <div class="panel-heading">Username Bio <span style="float: right; margin-bottom:20px;"><button style=""  class="
+                userbiobtn" data-toggle="modal" data-target="#userbio">
+                            <i style="color: black;" class="fa fa-edit"></i></button></span></div>
                 <div class="panel-body"> A short description about me.
 
                 </div>
@@ -438,20 +596,20 @@
 
                     <div class="list-group list-group-horizontal bhoechie-tab-menu">
                         <a href="#" class="list-group-item active text-center">
-                            <h4 class="glyphicon glyphicon-plane"></h4><br/>Story Title
+                            <h4 class="glyphicon glyphicon-plane"></h4><br/>Story Title and Cover
                         </a>
-                        <a href="#" class="list-group-item text-center">
+                       <!-- <a href="#" class="list-group-item text-center">
                             <h4 class="glyphicon glyphicon-road"></h4><br/>Cover Image
-                        </a>
+                        </a>  -->
                         <a href="#" class="list-group-item text-center">
                             <h4 class="glyphicon glyphicon-home"></h4><br/>Story Description
                         </a>
                         <a href="#" class="list-group-item text-center">
                             <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Story Images
                         </a>
-                        <a href="#" class="list-group-item text-center">
+                        <!--<a href="#" class="list-group-item text-center">
                             <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Credit Card
-                        </a>
+                        </a> -->
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bhoechie-tab">
@@ -518,21 +676,23 @@
                         <!-- hotel search -->
                         <div class="bhoechie-tab-content">
                             <center>
-                            </center>
-                        </div>
-                        <div class="bhoechie-tab-content">
-                            <center>
-
-                            </center>
-                        </div>
-                        <div class="bhoechie-tab-content">
-                            <center>
 
                                 <label for="storyimages">Story Images</label>
 
                                 <div class="file-loading">
                                     <input id="input-44" name="input44[]" type="file" multiple>
                                 </div>
+                            </center>
+                        </div>
+                        <div class="bhoechie-tab-content">
+                            <center>
+
+                            </center>
+                        </div>
+                        <div class="bhoechie-tab-content">
+                            <center>
+
+
 
                             </center>
                         </div>
@@ -543,59 +703,76 @@
             </div>
 
 
-            <!--<div class="panel panel-default">
-                <div class="panel-heading">Username Bio</div>
-                <div class="panel-body"> A long description about me.
+
+
+            <!-- Modal For User Bio -->
+            <div class="modal fade" id="userbio" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <!--  <div style="border-top:none;" class="modal-header">
+                           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div> -->
+                        <div style="border-top: none;" class="modal-body">
+
+                            <h4 style="border-top:none;" class="modal-title">Edit Your Status</h4>
+                            <br>
+
+                            <form>
+
+                                    <textarea class="userbio" type="text" required></textarea>
+
+
+                            </form>
+
+                           <div style="display:inline; float: right; padding-right: 0px;">
+                               <button type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </div>
+                        <div style="border-top:none;" class="modal-footer">
+
+                        </div>
+                    </div>
 
                 </div>
-            </div></div>
+            </div>
 
-
-        <div id="push"></div>
-    </div>
-    <footer id="footer">
-        <div class="row-fluid">
-            <div class="span3">
-                <p>
-                    <a href="http://twitter.com/Bootply" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-                    <a href="https://plus.google.com/+Bootply" rel="publisher">Google+</a><br>
-                    <a href="http://facebook.com/Bootply" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-                    <a href="https://github.com/iatek/bootply" title="Bootply on GitHub" target="ext">GitHub</a><br>
-                </p>
-            </div>
-            <div class="span3">
-                <p>
-                    <a data-toggle="modal" role="button" href="#contactModal">Contact Us</a><br>
-                    <a href="/tags">Tags</a><br>
-                    <a href="/bootstrap-community">Community</a><br>
-                    <a href="/upgrade">Upgrade</a><br>
-                </p>
-            </div>
-            <div class="span3">
-                <p>
-                    <a href="http://www.bootbundle.com" target="ext" rel="nofollow">BootBundle</a><br>
-                    <a href="https://bootstrapbay.com/?ref=skelly" target="_ext" rel="nofollow" title="Premium Bootstrap themes">Bootstrap Themes</a><br>
-                    <a href="http://www.bootstrapzero.com" target="_ext" rel="nofollow" title="Free Bootstrap templates">BootstrapZero</a><br>
-                    <a href="http://upgrade-bootstrap.bootply.com/">2.x Upgrade Tool</a><br>
-                </p>
-            </div>
-            <div class="span3">
-                <span class="pull-right">©Copyright 2013-2014 <a href="/" title="The Bootstrap Playground">Bootply</a> | <a href="/about#privacy">Privacy</a></span>
-            </div>
         </div>
-    </footer>  -->
+
+        <!-- Modal For User bio ends here -->
+
+
+
 
     <script src="/plugins/bootstrap-select.min.js"></script>
     <script src="/codemirror/jquery.codemirror.js"></script>
     <script src="/beautifier.js"></script>
 
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                        $('#imagePreview').hide();
+                        $('#imagePreview').fadeIn(650);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imageUpload").change(function() {
+                readURL(this);
+            });
 
 
+        </script>
 
 
+        <script>
 
-
-    <script>
 
         $(document).on('click', '#close-preview', function(){
             $('.image-preview').popover('hide');
@@ -609,6 +786,8 @@
                 }
             );
         });
+
+
 
         $(function() {
             // Create the close button

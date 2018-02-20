@@ -55,9 +55,9 @@ class MemberRegistrationController extends Controller
         auth()->login($member);
 
 
-        $userInfo = $member->find(Auth::id());
+        $userid = $member->find(Auth::id());
 
-        return view ('userprofile', compact('userInfo'));
+        return view ('userprofile', compact('userid'));
 
        // return redirect('/userprofile')->with('userInfo', 'Profile page!');
     }

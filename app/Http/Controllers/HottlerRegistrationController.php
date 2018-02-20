@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Hottler;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class HottlerRegistrationController extends Controller
 {
@@ -35,7 +40,19 @@ class HottlerRegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->validate(request(),
+       [
+          'username'=>'required',
+           'email'=>'required|email',
+           'password'=>'required|confirmed'
+       ]);
+        $hottler = Hottler::create(request(['username','email','password',]));
+
+        auth()->login($hottler);
+
+        $hotelid = $hottler->find(auth()->id());
+        return view ('hoteladmin',compact('hotelid'));
+
     }
 
     /**

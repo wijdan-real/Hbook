@@ -834,6 +834,29 @@
         }
 
 
+        #hotelregmodal{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+
+        #userregmodal{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+
+        /*.modal-backdrop.in {
+            opacity:0.2;
+            background:white;
+        } */
+
+        .modal-backdrop{
+
+            background:linear-gradient(to top left,#9900ff 0%, #ff0066 98%);
+            opacity:1.0 !important;
+            overflow:hidden;
+
+        }
+
 
     </style>
 
@@ -912,12 +935,12 @@
                 <ul style=""  class="nav navbar-nav navbar-right">
 
                     <li >
-                        <a style=" color: #353b48;" class="tool-tip" href="registration" target="_self" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
+                        <a style=" color: #353b48;" class="tool-tip" target="_self" data-toggle="modal" data-target="#userregmodal" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
                             <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Member Login</b></a>
                     </li>
 
                     <li>
-                        <a style="  color: #353b48;" class="tool-tip"  data-toggle="modal" data-target="#myModal1" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
+                        <a style="  color: #353b48;" class="tool-tip"  data-toggle="modal" data-target="#hotelregmodal" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
                             <i class="fa fa-registered fa-3x"></i> <b style="font-size: 12px;">Register Hotel</b></a>
                     </li>
 
@@ -1442,40 +1465,128 @@
     </div>   -->
 
 
-   <!-- Modal For Registartion of Hotels -->
+   <!-- Modal For Hotels Signin -->
 
 
     <!-- Modal  -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="hotelregmodal" role="dialog">
+        <div style="background:transparent;" class="modal-dialog">
+
+            <!-- Modal content
+            <div class="modal-content"> -->
+
+                <div class="modal-body">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to your Hotel</h3>
+                                <p>Manage your hotel activities there</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="hotelname">Hotel Name</label>
+                                    <input type="text" name="hotelname" placeholder="Hotel Name" class="form-username form-control" id="form-username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="hotelpassword">Password</label>
+                                    <input type="password" name="hotelpassword" placeholder="Hotel Password" class="form-password form-control" id="form-password" required>
+                                </div>
+                                <button type="submit" class="btn">Sign in</button>
+
+
+                                <hr>
+
+                                <span><strong style="padding-left:90px; font-size:20px;">For Hotel Registration <a href="hotelregistration">Register Hotel</a></strong></span>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+               <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal For Hotel Sigin Ends here -->
+
+
+    <!-- Modal For User Sigin -->
+
+
+    <div class="modal fade" id="userregmodal" role="dialog">
         <div class="modal-dialog">
 
-            <!-- Modal content  -->
-            <div class="modal-content">
+            <!-- Modal content
+            <div class="modal-content"> -->
 
                 <div class="modal-body">
 
 
+                    <div class="form-box1">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Username</label>
+                                    <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn">Sign in!</button>
+                                <hr>
+
+                                <div class="social-login">
+
+                                    <div class="social-login-buttons">
+                                        <a style="" class="btn btn-link-2" href="#">
+                                            <i  class="fa fa-facebook"><strong style="padding-left:5px;">Facebook</strong></i>
+                                        </a>
+                                        <a class="btn btn-link-2" href="#">
+                                            <i  class="fa fa-twitter"><strong style="padding-left:5px;">Twiiter</strong></i>
+                                        </a>
+                                        <a class="btn btn-link-2" href="#">
+                                            <i  class="fa fa-google-plus"><strong style="padding-left:5px;">Google</strong></i>
+                                        </a>
+                                    </div>
+                                    <h3>For Sign Up Go to <a href="registration">Signup</a></h3>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
-
             </div>
 
-        </div>
-    </div>    <!-- Modal ends here -->
+        <!--</div> -->
+    </div>
 
-    <!--<div class="modal fade text-center" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>  -->
+    </div>
 
 
 
-    <!-- Sign in to your Hotel -->
-
-
-
-
+    <!-- Modal For User Sigin Ends here -->
 
 
 
