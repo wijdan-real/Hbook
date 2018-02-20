@@ -1,10 +1,10 @@
 <?php
 
 
-    Route::get('/', function () {
-        return view('homepage');
-    });
+Route::get('/',function (){
 
+    return view('homepage');
+});
 
 
 
@@ -56,11 +56,7 @@ Route::get('/bookingform',function(){
 });
 
 
-Route::get('/hotelregistration',function(){
 
-    return view ('hotelregistration');
-});
-Route::post('/hotelprofile','HottlerRegistrationController@store');
 
 
 Route::get('/tripplan',function(){
@@ -69,10 +65,16 @@ Route::get('/tripplan',function(){
 });
 
 
-Route::get('/registration','MemberRegistrationController@create');
+Route::get('/user/registration','MemberRegistrationController@create');
+Route::get('/logout/member','MemberSessionsController@destroy');
 Route::post('/userprofile','MemberRegistrationController@store');
+Route::post('/userprofile','MemberRSessionController@store');
 //Route::post('/logout','MemberSessionsController@destroy');
-Route::get('/logout','MemberSessionsController@destroy');
+
+Route::post('/hotelprofile','HottlerRegistrationController@store');
+Route::post('/hbook','HottlerSessionController@store');
+Route::get('/logout/hottler','HottlerSessionController@destroy');
+Route::get('/hotel/registration','HottlerRegistrationController@create');
 
 
 

@@ -1541,14 +1541,16 @@
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <form role="form" action="" method="post" class="login-form">
+                            <form role="form" action="/hbook" method="post" class="login-form">
+                                <?php echo e(csrf_field()); ?>
+
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-username">Username</label>
-                                    <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                    <label class="sr-only" for="username">Email</label>
+                                    <input type="email" name="email" placeholder="Email..." class="form-username form-control" id="form-username">
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-password">Password</label>
-                                    <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
                                 </div>
                                 <button type="submit" class="btn">Sign in!</button>
                                 <hr>
