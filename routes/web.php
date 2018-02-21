@@ -65,16 +65,7 @@ Route::get('/tripplan',function(){
 });
 
 
-Route::get('/user/registration','MemberRegistrationController@create');
-Route::get('/logout/member','MemberSessionsController@destroy');
-Route::post('/userprofile','MemberRegistrationController@store');
-Route::post('/userprofile','MemberRSessionController@store');
-//Route::post('/logout','MemberSessionsController@destroy');
 
-Route::post('/hotelprofile','HottlerRegistrationController@store');
-Route::post('/hbook','HottlerSessionController@store');
-Route::get('/logout/hottler','HottlerSessionController@destroy');
-Route::get('/hotel/registration','HottlerRegistrationController@create');
 
 
 
@@ -94,3 +85,7 @@ Route::get('/comparison1',function (){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
