@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+
     <title>HBook</title>
 
     <!-- Bootstrap Core CSS -->
@@ -29,6 +31,12 @@
 
     <link rel="stylesheet" href="/css/landingpage/form-elements.css">
     <link rel="stylesheet" href="/css/landingpage/style.css">
+
+
+
+
+
+
 
 
 
@@ -902,7 +910,7 @@
 
 
 
-        <nav style="background-color: white; border-bottom: none; border-top: none; margin-top: 10px;" class="navbar navbar-default">
+    <nav style="background-color: white; border-bottom: none; border-top: none; margin-top: 10px;" class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -911,7 +919,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-               <!-- <a style="font-size: 30px; margin-top: 5px; margin-left: 0px;" class="navbar-brand" href="#">H-BOOK</a>  -->
+
 
                            <a class="navbar-brand" style="font-weight: 400; font-size: 32px; margin-top: 8px; margin-left: 5px;">
                     <div class="inline-p" style=""><p class="brand1">H</p><p class="brand2">BOOK</p></div>
@@ -919,29 +927,17 @@
 
             </div>
             <div style="margin-left: 5px;" class="collapse navbar-collapse" id="#myNavbar">
-               <!-- <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Page 1-1</a></li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>  -->
+
                 <ul style=""  class="nav navbar-nav navbar-right">
 
                     <li >
-                        <a style=" color: #353b48;" class="tool-tip" target="_self" data-toggle="modal" data-target="#userregmodal" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
-                            <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">Member Login</b></a>
+                        <a style=" color: #353b48;" href="/login" class="tool-tip" target="_self" data-tooltip-title="Find a Hotel" data-tooltip-position="bottom">
+                            <i class="fa fa-user-o fa-3x"></i> <b style="font-size: 12px;">User Login</b></a>
                     </li>
 
                     <li>
-                        <a style="  color: #353b48;" class="tool-tip"  data-toggle="modal" data-target="#hotelregmodal" data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
-                            <i class="fa fa-registered fa-3x"></i> <b style="font-size: 12px;">Register Hotel</b></a>
+                        <a style="  color: #353b48;" class="tool-tip" href="/register"  data-tooltip-title="Register Your Hotel" data-tooltip-position="bottom">
+                            <i class="fa fa-registered fa-3x"></i> <b style="font-size: 12px;">Register User</b></a>
                     </li>
 
 
@@ -955,9 +951,7 @@
 
 
 
-
-
-
+ 
 
 
 
@@ -1613,6 +1607,8 @@
 
     <script src="js/jquery.js"></script>
 
+    <!-- Scripts -->
+    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
     <!-- Bootstrap Core JavaScript -->
     <!--<script src="js/bootstrap.min.js"></script>-->
 

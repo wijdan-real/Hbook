@@ -40,11 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'hottler' => [
+            'driver' => 'session',
+            'provider' => 'hottlers',
+        ],
 
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
     ],
 
     /*
@@ -69,6 +74,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'hottlers' => [
+            'driver' => 'eloquent',
+            'model' => App\Hottler::class,
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',
@@ -97,6 +107,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        'hottlers' => [
+            'provider' => 'hottlers',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
     ],
 
 ];

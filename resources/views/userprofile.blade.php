@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 @if(Auth::check())
-    <title>{{$userid->firstname}}</title>
+    <title> {{auth()->user()->name}}</title>
 
 @endif
     <!-- Latest compiled and minified CSS -->
@@ -367,7 +367,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Aplication</a>
+            <a class="navbar-brand" href="/homepage">HBook</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -376,15 +376,27 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     @if(Auth::check())
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                    @endif
-                        <ul class="dropdown-menu">
-                        <li align="center" class="well">
-                            <div><img class="img-responsive" style="padding:2%;" src="https://bootdey.com/img/Content/avatar/avatar1.png"/><a class="change" href="">Change Picture</a></div>
-                            <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-lock"></span> Security</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                            <a  href="/logout"  class="btn btn-sm btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                        </li>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                            <li><a href="/user/info">Settings</a></li>
+                        </ul>
+                    </li>
+                        @endif
                     </ul>
                 </li>
             </ul>
@@ -397,9 +409,18 @@
 <div class="container target">
     <div class="row">
         <div class="col-sm-5">
-            <h1 class="">{{$userid->firstname}}</h1>
+{{--}}
+            <img src="/uploads/avatars/{{auth()->user()->avatar}}" style="width: 150px; height: 150px; float: left; border-radius:50%; margin-right: 10px">
 
-            <button type="button" class="btn btn-success">Edit Settings</button>  <button type="button" class="btn btn-info">Change Profile Picture</button>
+            <form enctype="multipart/form-data" method="post" action="/userprofile">
+                {{csrf_field()}}
+                <label>Upload Your Profile Image</label>
+                <input type="file " name="avatar">
+                <input type="submit" class=" btn btn-sm btn-primary" >
+            </form>
+
+{{--}}
+            <h2 class=""> {{auth()->user()->name}}</h2>
             <br>
         </div>
         <div class="col-sm-offset-5 col-sm-2">
@@ -412,17 +433,19 @@
                     <div style="text-align: center;">
                         <div class="avatar-upload">
                             <div class="avatar-edit">
+                                <img src="/uploads/avatars/{{auth()->user()->avatar}}" style="width: 150px; height: 150px; float: left; border-radius:50%; margin-right: 10px">
+
+                                <form>
                                 <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
                                 <label for="imageUpload"></label>
+                                </form>
                             </div>
-                            <div class="avatar-preview">
-                                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
                 </div>
+
 
 
 
@@ -434,12 +457,10 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> @if(Auth::check()){{$userid->created_at}}@endif</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{auth()->user()->created_at->diffForHumans()}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
-                    @if(Auth::check())
-                        {{$userid->firstname}}{{$userid->lastname}}
-                        @endif
+                   {{auth()->user()->name.' '.auth()->user()->lastname}}
                     </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
 
@@ -482,11 +503,11 @@
         <!--/col-3-->
         <div class="col-sm-9" contenteditable="false" style="">
             <div class="panel panel-default">
-                <div class="panel-heading">Username Bio <span style="float: right; margin-bottom:20px;"><button style=""  class="
+                <div class="panel-heading">{{auth()->user()->name}}bio <span style="float: right; margin-bottom:20px;"><button style=""  class="
                 userbiobtn" data-toggle="modal" data-target="#userbio">
                             <i style="color: black;" class="fa fa-edit"></i></button></span></div>
-                <div class="panel-body"> A short description about me.
-
+                <div class="panel-body">
+                    {{\Illuminate\Support\Facades\Auth::user()->userprofile->userbio}}
                 </div>
             </div>
             <div class="panel panel-default target">
@@ -720,7 +741,7 @@
                             <h4 style="border-top:none;" class="modal-title">Edit Your Status</h4>
                             <br>
 
-                            <form>
+                            <form method="post">
 
                                     <textarea class="userbio" type="text" required></textarea>
 

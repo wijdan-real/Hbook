@@ -14,7 +14,6 @@ use Illuminate\Contracts\Queue\QueueableEntity;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
-
 /**
  * @mixin \Illuminate\Database\Eloquent\Builder
  * @mixin \Illuminate\Database\Query\Builder
@@ -283,7 +282,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         $model->setConnection(
             $this->getConnectionName()
         );
-
         return $model;
     }
 
