@@ -458,7 +458,7 @@
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{auth()->user()->created_at->diffForHumans()}}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> {{auth()->user()->userprofile->updated_at->diffForHumans()}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
                    {{auth()->user()->name.' '.auth()->user()->lastname}}
                     </li>

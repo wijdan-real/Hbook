@@ -826,6 +826,7 @@ class Blueprint
         $this->timestamp('updated_at')->nullable();
     }
 
+
     /**
      * Add nullable creation and update timestamps to the table.
      *

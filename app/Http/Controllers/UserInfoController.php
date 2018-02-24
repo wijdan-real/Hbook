@@ -60,6 +60,17 @@ class UserInfoController extends Controller
         $userProfile->dob = Input::get("dob");
         $userProfile->gender = Input::get("gender");
         $userProfile->save();
+//-------------------------------------------------------------------------------------
+
+
+        //updating query
+      //  $userProfile->update([
+      //      'last_seen' => new \DateTime(),
+      //  ]);
+
+
+
+        //------------------------------------------------------------------------------------------------
 
               //  'user_id'=>auth()->user()->id,
               //  'userbio'=>request('userbio'),
