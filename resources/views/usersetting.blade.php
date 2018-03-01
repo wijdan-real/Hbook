@@ -61,25 +61,25 @@
             </div>
             <h3>Personal info</h3>
 
-            <form class="form-horizontal"  method="post" action="/userprofile">
+            <form enctype="multipart/form-data"  class="form-horizontal"  method="post" action="/userprofile">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label class="col-lg-3 control-label">User Bio:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" name="userbio" type="textarea" placeholder="Write your status" required>
+                        <input class="form-control" name="userbio" type="textarea" placeholder="Write your status" value="{{$userInfo->userbio}}" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Interests:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="textarea" name="interest" placeholder="Interests" required>
+                        <input class="form-control" type="textarea" name="interest" placeholder="Interests" value="{{$userInfo->interest}}" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Occupation:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" name="occupation" placeholder="Occupation" required>
+                        <input class="form-control" type="text" name="occupation" placeholder="Occupation" value="{{$userInfo->occupation}}" required>
                     </div>
                 </div>
 
@@ -88,20 +88,20 @@
                     <label class="col-lg-3 control-label">D-0-B</label>
                     <div class="col-lg-8">
                       <!--  <input class="form-control" type="date" placeholder="" required>  -->
-                        <input type="date" datepicker data-date-format="yyyy.mm" name="dob">
+                        <input type="date" datepicker data-date-format="yyyy.mm" name="dob" value="{{$userInfo->dob}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-3 control-label">City</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="city" placeholder="City" required>
+                        <input class="form-control" name="city" type="text" placeholder="City" value="{{$userInfo->city}}"  required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Phone Number</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="tel" name="phonenumber" placeholder="Tel Number" required>
+                        <input class="form-control" type="tel" name="phonenumber" placeholder="Tel Number" value="{{$userInfo->phonenumber}}"  required>
                     </div>
                 </div>
 
@@ -116,7 +116,9 @@
                         <input type="radio" name="gender" value="female">Female
                     </label>
                    </div>
-                </div>
+                    </div>
+
+
 
 
 
@@ -196,6 +198,24 @@
 <script>
 
     $("input").datepicker();
+
+</script>
+
+
+<script>
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                        .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
 </script>
 

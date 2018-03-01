@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,10 @@
             background: white;
             overflow-x: hidden;
             overflow-y: scroll;
+
         }
+
+
 
 
 
@@ -250,105 +253,58 @@
         }
 
 
-        .profilepic {
-           /* max-width: 360px; */
-            margin: 10px auto;
-            margin-left:0px;
-            padding-left:50px;
-            border-raduis:3%;
-            width: 360px;
 
-        }
-        h1
-        {
-            font-size: 20px;
-            text-align: center;
-            margin: 20px 0 20px;
-        }
-        h1 small
-        {
-            display: block;
-            font-size: 15px;
-            padding-top: 8px;
-            color: gray;
-        }
-        .avatar-upload
-        {
-            position: relative;
-            max-width: 205px;
-            margin-top: 50px auto;
-            margin-bottom: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            right:70px;
-        }
-        .avatar-upload .avatar-edit
-        {
-            position: absolute;
-            right: 75px;
-            z-index: 1;
-            top: 40px;
-        }
-        .avatar-upload .avatar-edit input
-        {
-            display: none;
 
-        }
-        .avatar-upload .avatar-edit input + label
-        {
-            top: 87px;
-            /*display: inline-block; */
-            width: 170px;
-            height: 40px;
-            padding-left: 0px;
-            padding-right:40px;
-            position: absolute;
-            left:5px;
-            right:0;
-            margin-bottom:0;
-            border-radius: 2%;
-            background: #FFFFFF;
-            border: 1px solid transparent;
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
-            cursor: pointer;
-            font-weight: normal;
-            transition: all 0.2s ease-in-out;
-        }
-        .avatar-upload .avatar-edit input + label:hover
-        {
-            background: #f1f1f1;
-            border-color: #d6d6d6;
-        }
-        .avatar-upload .avatar-edit input + label:after
-        {
-            content: "\f040";
-            font-family: 'FontAwesome';
-            color: #757575;
-            position: absolute;
-            top: 10px;
-            left: 0;
-            right: 0;
+        #formdiv {
             text-align: center;
-            margin: auto;
         }
-        .avatar-upload .avatar-preview
-        {
-            width: 180px;
-            height: 170px;
-            position: relative;
-            border-radius:0%;
-            border: 3px solid #F8F8F8;
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        #file {
+            color: green;
+            padding: 5px;
+            border: 1px dashed #123456;
+            background-color: #f9ffe5;
         }
-        .avatar-upload .avatar-preview > div
-        {
+        #img {
+            width: 17px;
+            border: none;
+            height: 17px;
+            margin-left: -20px;
+            margin-bottom: 191px;
+        }
+        .upload {
             width: 100%;
-            height: 100%;
-            border-radius: 0%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            height: 30px;
         }
+        .previewBox {
+            text-align: center;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            float: left;
+        }
+        .previewBox img {
+            height: 150px;
+            width: 150px;
+            padding: 5px;
+            border: 1px solid rgb(232, 222, 189);
+        }
+        .delete {
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            cursor: pointer;
+            width: 20px;
+            height:  20px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+
+
+
 
 
     </style>
@@ -393,7 +349,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
-                            <li><a href="/user/info">Settings</a></li>
+                            <li><a href="{{url('user/info/'.auth()->user()->userprofile->user_id)}}">Settings</a></li>
                         </ul>
                     </li>
                         @endif
@@ -405,8 +361,10 @@
 </nav>
 
 
+
+
 <hr class="">
-<div class="container target">
+<div class="container">
     <div class="row">
         <div class="col-sm-5">
 {{--}}
@@ -428,42 +386,80 @@
 
            <!-- <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>-->
 
-                <div class="profilepic">
+                <div style="padding-bottom:0px;" >
 
-                    <div style="text-align: center;">
-                        <div class="avatar-upload">
-                            <div class="avatar-edit">
-                                <img src="/uploads/avatars/{{auth()->user()->avatar}}" style="width: 150px; height: 150px; float: left; border-radius:50%; margin-right: 10px">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+                    <!-- Modal -->
+                    <form enctype="multipart/form-data"  class="form-horizontal"  method="post" action="/userprofile/upload">
+                        {{csrf_field()}}
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Upload Photo</h4>
+                                </div>
+                                <div class="form-group">
 
-                                <form>
-                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-                                <label for="imageUpload"></label>
-                                </form>
+                                    <label class="col-lg-3">Upload Image</label>
+                                    <div class="col-lg-8">
+
+                                        <input type='file' name="avatar" onchange="readURL(this);" />
+                                        <img style="max-width: 180px; height: 100px;" id="blah" alt="your image" />
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                                </div>
                             </div>
+                        </div>`
+                    </div>
+                    </form>
+                </div>
 
+
+
+            <img src="/uploads/avatars/{{auth()->user()->avatar}}" style="width: 150px; height: 150px; float: left; border-radius:50%; margin-right: 10px">
+
+
+
+                    <!--
+<img src="/uploads/avatars/{{--auth()->user()->userprofile->avatar--}}" style="width: 150px; height: 150px; float: left; border-radius:50%; margin-right: 10px">  -->
+
+                              <!--  <form   enctype="multipart/form-data" method="post" action="/userprofile">
+                                    {{--csrf_field()--}}
+
+                                            <button>
+
+                                    <button class="btn btn-primary btn-sm">Save</button>
+
+
+                                </form>-->
+
+                           <!-- <div class="avatar-preview">
+                                <div id="imagePreview" style="background-image:url(http://i.pravatar.cc/500?img=7);">
+                                 </div>  -->
                         </div>
                     </div>
 
                 </div>
 
-
-
-
         </div>
-    </div>
-    <br>
+    <br><br><br>
     <div class="row">
         <div  class="col-sm-3">
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span> {{auth()->user()->created_at->diffForHumans()}}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> {{auth()->user()->userprofile->updated_at->diffForHumans()}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> {{auth()->user()->userprofile->lastseen}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span>
                    {{auth()->user()->name.' '.auth()->user()->lastname}}
                     </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
-
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span>
+{{auth()->user()->userprofile->occupation}}
                 </li>
             </ul>
             <div class="panel panel-default">
@@ -604,9 +600,14 @@
 
             </div>
 
-
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
             <div class="panel panel-default">
                 <div class="panel-heading">
+
+
+
+
                     <span class="glyphicon glyphicon-pen"></span> Create Your Story</div>
                 <div class="panel-body">
 
@@ -643,14 +644,14 @@
                                     <div class="col-lg-12">
 
                                         <label for="storytitle">Story Title</label>
-                                        <input type="text" class="form-control" id="storytitle" placeholder="Enter the title for your story" name="storytitle">
+                                        <input type="text" class="form-control" id="storytitle" placeholder="Enter the title for your story" name="title" required>
 
                                     </div>
 
                                     <div class=" col-lg-12">
                                         <label for="storycover">Story Cover Image</label>
                                         <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" id="storycover" disabled="disabled" placeholder="Enter Your Story's Cover Image"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <input type="file" name="coverimage">
                                             <span class="input-group-btn">
                     <!-- image-preview-clear button -->
                     <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -660,7 +661,7 @@
                     <div class="btn btn-primary image-preview-input">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span class="image-preview-input-title">Browse</span>
-                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                        <input type="file" accept="image/png, image/jpeg, image/gif" name="images[]" multiple/> <!-- rename it -->
                     </div>
                 </span>
                                         </div><!-- /input-group image-preview [TO HERE]-->
@@ -682,7 +683,7 @@
                                     <div class="col-lg-12">
 
                                         <label for="storydesc">Story Description</label>
-                                        <textarea  class="form-control" id="storydesc" rows="10" placeholder="Write your trip story here"></textarea>
+                                        <textarea  class="form-control" name="description" id="storydesc" rows="10" placeholder="Write your trip story here"></textarea>
 
                                     </div>
 
@@ -700,9 +701,22 @@
 
                                 <label for="storyimages">Story Images</label>
 
-                                <div class="file-loading">
+                              <!--  <div class="file-loading">
                                     <input id="input-44" name="input44[]" type="file" multiple>
+                                </div> -->
+
+
+                                <div class="row">
+
+                                        <div class="col-md-6">
+                                            <input type="file"  name="file[]"  id="images" onchange="preview_images();" multiple/>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="submit">submit </button>
+                                        </div>
+
                                 </div>
+                                <div class="row" id="image_preview"></div>
                             </center>
                         </div>
                         <div class="bhoechie-tab-content">
@@ -720,8 +734,11 @@
                     </div>
                 </div>
                 </div>
+
             </div>
             </div>
+
+            </form>
 
 
 
@@ -772,290 +789,7 @@
     <script src="/codemirror/jquery.codemirror.js"></script>
     <script src="/beautifier.js"></script>
 
-        <script>
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-                        $('#imagePreview').hide();
-                        $('#imagePreview').fadeIn(650);
-                    }
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            $("#imageUpload").change(function() {
-                readURL(this);
-            });
 
-
-        </script>
-
-
-        <script>
-
-
-        $(document).on('click', '#close-preview', function(){
-            $('.image-preview').popover('hide');
-            // Hover befor close the preview
-            $('.image-preview').hover(
-                function () {
-                    $('.image-preview').popover('show');
-                },
-                function () {
-                    $('.image-preview').popover('hide');
-                }
-            );
-        });
-
-
-
-        $(function() {
-            // Create the close button
-            var closebtn = $('<button/>', {
-                type:"button",
-                text: 'x',
-                id: 'close-preview',
-                style: 'font-size: initial;',
-            });
-            closebtn.attr("class","close pull-right");
-            // Set the popover default content
-            $('.image-preview').popover({
-                trigger:'manual',
-                html:true,
-                title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
-                content: "There's no image",
-                placement:'bottom'
-            });
-            // Clear event
-            $('.image-preview-clear').click(function(){
-                $('.image-preview').attr("data-content","").popover('hide');
-                $('.image-preview-filename').val("");
-                $('.image-preview-clear').hide();
-                $('.image-preview-input input:file').val("");
-                $(".image-preview-input-title").text("Browse");
-            });
-            // Create the preview image
-            $(".image-preview-input input:file").change(function (){
-                var img = $('<img/>', {
-                    id: 'dynamic',
-                    width:250,
-                    height:200
-                });
-                var file = this.files[0];
-                var reader = new FileReader();
-                // Set preview image into the popover data-content
-                reader.onload = function (e) {
-                    $(".image-preview-input-title").text("Change");
-                    $(".image-preview-clear").show();
-                    $(".image-preview-filename").val(file.name);
-                    img.attr('src', e.target.result);
-                    $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
-                }
-                reader.readAsDataURL(file);
-            });
-        });
-
-
-    </script>
-
-
-
-
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-40413119-1', 'bootply.com');
-        ga('send', 'pageview');
-    </script>
-    <script>
-        jQuery.fn.shake = function(intShakes, intDistance, intDuration, foreColor) {
-            this.each(function() {
-                if (foreColor && foreColor!="null") {
-                    $(this).css("color",foreColor);
-                }
-                $(this).css("position","relative");
-                for (var x=1; x<=intShakes; x++) {
-                    $(this).animate({left:(intDistance*-1)}, (((intDuration/intShakes)/4)))
-                        .animate({left:intDistance}, ((intDuration/intShakes)/2))
-                        .animate({left:0}, (((intDuration/intShakes)/4)));
-                    $(this).css("color","");
-                }
-            });
-            return this;
-        };
-    </script>
-    <script>
-        $(document).ready(function() {
-
-            $('.tw-btn').fadeIn(3000);
-            $('.alert').delay(5000).fadeOut(1500);
-
-            $('#btnLogin').click(function(){
-                $(this).text("...");
-                $.ajax({
-                    url: "/loginajax",
-                    type: "post",
-                    data: $('#formLogin').serialize(),
-                    success: function (data) {
-                        //console.log('data:'+data);
-                        if (data.status==1&&data.user) { //logged in
-                            $('#menuLogin').hide();
-                            $('#lblUsername').text(data.user.username);
-                            $('#menuUser').show();
-                            /*
-                            $('#completeLoginModal').modal('show');
-                            $('#btnYes').click(function() {
-                                window.location.href="/";
-                            });
-                            */
-                        }
-                        else {
-                            $('#btnLogin').text("Login");
-                            prependAlert("#spacer",data.error);
-                            $('#btnLogin').shake(4,6,700,'#CC2222');
-                            $('#username').focus();
-                        }
-                    },
-                    error: function (e) {
-                        $('#btnLogin').text("Login");
-                        console.log('error:'+JSON.stringify(e));
-                    }
-                });
-            });
-            $('#btnRegister').click(function(){
-                $(this).text("Wait..");
-                $.ajax({
-                    url: "/signup?format=json",
-                    type: "post",
-                    data: $('#formRegister').serialize(),
-                    success: function (data) {
-                        console.log('data:'+JSON.stringify(data));
-                        if (data.status==1) {
-                            $('#btnRegister').attr("disabled","disabled");
-                            $('#formRegister').text('Thanks. You can now login using the Login form.');
-                        }
-                        else {
-                            prependAlert("#spacer",data.error);
-                            $('#btnRegister').shake(4,6,700,'#CC2222');
-                            $('#btnRegister').text("Sign Up");
-                            $('#inputEmail').focus();
-                        }
-                    },
-                    error: function (e) {
-                        $('#btnRegister').text("Sign Up");
-                        console.log('error:'+e);
-                    }
-                });
-            });
-
-            $('.loginFirst').click(function(){
-                $('#navLogin').trigger('click');
-                return false;
-            });
-
-            $('#btnForgotPassword').on('click',function(){
-                $.ajax({
-                    url: "/resetPassword",
-                    type: "post",
-                    data: $('#formForgotPassword').serializeObject(),
-                    success: function (data) {
-                        if (data.status==1){
-                            prependAlert("#spacer",data.msg);
-                            return true;
-                        }
-                        else {
-                            prependAlert("#spacer","Your password could not be reset.");
-                            return false;
-                        }
-                    },
-                    error: function (e) {
-                        console.log('error:'+e);
-                    }
-                });
-            });
-
-            $('#btnContact').click(function(){
-
-                $.ajax({
-                    url: "/contact",
-                    type: "post",
-                    data: $('#formContact').serializeObject(),
-                    success: function (data) {
-                        if (data.status==1){
-                            prependAlert("#spacer","Thanks. We got your message and will get back to you shortly.");
-                            $('#contactModal').modal('hide');
-                            return true;
-                        }
-                        else {
-                            prependAlert("#spacer",data.error);
-                            return false;
-                        }
-                    },
-                    error: function (e) {
-                        console.log('error:'+e);
-                    }
-                });
-                return false;
-            });
-
-            /*
-            $('.nav .dropdown-menu input').on('click touchstart',function(e) {
-                e.stopPropagation();
-            });
-            */
-
-
-
-
-
-        });
-        $.fn.serializeObject = function()
-        {
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function() {
-                if (o[this.name] !== undefined) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        };
-        var prependAlert = function(appendSelector,msg){
-            $(appendSelector).after('<div class="alert alert-info alert-block affix" id="msgBox" style="z-index:1300;margin:14px!important;">'+msg+'</div>');
-            $('.alert').delay(3500).fadeOut(1000);
-        }
-    </script>
-    <!-- Quantcast Tag -->
-    <script type="text/javascript">
-        var _qevents = _qevents || [];
-
-        (function() {
-            var elem = document.createElement('script');
-            elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-            elem.async = true;
-            elem.type = "text/javascript";
-            var scpt = document.getElementsByTagName('script')[0];
-            scpt.parentNode.insertBefore(elem, scpt);
-        })();
-
-        _qevents.push({
-            qacct:"p-0cXb7ATGU9nz5"
-        });
-    </script>
-    <noscript>
-        &amp;amp;amp;amp;amp;amp;amp;lt;div style="display:none;"&amp;amp;amp;amp;amp;amp;amp;gt;
-        &amp;amp;amp;amp;amp;amp;amp;lt;img src="//pixel.quantserve.com/pixel/p-0cXb7ATGU9nz5.gif" border="0" height="1" width="1" alt="Quantcast"/&amp;amp;amp;amp;amp;amp;amp;gt;
-        &amp;amp;amp;amp;amp;amp;amp;lt;/div&amp;amp;amp;amp;amp;amp;amp;gt;
-    </noscript>
     <!-- End Quantcast tag -->
     <div id="completeLoginModal" class="modal hide">
         <div class="modal-header">
@@ -1158,6 +892,7 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
@@ -1184,6 +919,170 @@
 
 
 <script>
+    function preview_images()
+    {
+        var total_file=document.getElementById("images").files.length;
+        for(var i=0;i<total_file;i++)
+        {
+            $('#image_preview').append("<div class='col-md-3'><img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+        }
+    }
+</script>
+
+
+<script>
+
+
+    $('#add_more').click(function() {
+        "use strict";
+        $(this).before($("<div/>", {
+            id: 'filediv'
+        }).fadeIn('slow').append(
+                $("<input/>", {
+                    name: 'file[]',
+                    type: 'file',
+                    id: 'file',
+                    multiple: 'multiple',
+                    accept: 'image/*'
+                })
+        ));
+    });
+
+    $('#upload').click(function(e) {
+        "use strict";
+        e.preventDefault();
+
+        if (window.filesToUpload.length === 0 || typeof window.filesToUpload === "undefined") {
+            alert("No files are selected.");
+            return false;
+        }
+
+        // Now, upload the files below...
+        // https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications#Handling_the_upload_process_for_a_file.2C_asynchronously
+    });
+
+    deletePreview = function (ele, i) {
+        "use strict";
+        try {
+            $(ele).parent().remove();
+            window.filesToUpload.splice(i, 1);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    $("#file").on('change', function() {
+        "use strict";
+
+        // create an empty array for the files to reside.
+        window.filesToUpload = [];
+
+        if (this.files.length >= 1) {
+            $("[id^=previewImg]").remove();
+            $.each(this.files, function(i, img) {
+                var reader = new FileReader(),
+                        newElement = $("<div id='previewImg" + i + "' class='previewBox'><img /></div>"),
+                        deleteBtn = $("<span class='delete' onClick='deletePreview(this, " + i + ")'>X</span>").prependTo(newElement),
+                        preview = newElement.find("img");
+
+                reader.onloadend = function() {
+                    preview.attr("src", reader.result);
+                    preview.attr("alt", img.name);
+                };
+
+                try {
+                    window.filesToUpload.push(document.getElementById("file").files[i]);
+                } catch (e) {
+                    console.log(e.message);
+                }
+
+                if (img) {
+                    reader.readAsDataURL(img);
+                } else {
+                    preview.src = "";
+                }
+
+                newElement.appendTo("#filediv");
+            });
+        }
+    });
+
+
+
+</script>
+
+
+
+    <script>
+
+        $(document).on('click', '#close-preview', function(){
+            $('.image-preview').popover('hide');
+            // Hover befor close the preview
+            $('.image-preview').hover(
+                    function () {
+                        $('.image-preview').popover('show');
+                    },
+                    function () {
+                        $('.image-preview').popover('hide');
+                    }
+            );
+        });
+
+        $(function() {
+            // Create the close button
+            var closebtn = $('<button/>', {
+                type:"button",
+                text: 'x',
+                id: 'close-preview',
+                style: 'font-size: initial;',
+            });
+            closebtn.attr("class","close pull-right");
+            // Set the popover default content
+            $('.image-preview').popover({
+                trigger:'manual',
+                html:true,
+                title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+                content: "There's no image",
+                placement:'bottom'
+            });
+            // Clear event
+            $('.image-preview-clear').click(function(){
+                $('.image-preview').attr("data-content","").popover('hide');
+                $('.image-preview-filename').val("");
+                $('.image-preview-clear').hide();
+                $('.image-preview-input input:file').val("");
+                $(".image-preview-input-title").text("Browse");
+            });
+            // Create the preview image
+            $(".image-preview-input input:file").change(function (){
+                var img = $('<img/>', {
+                    id: 'dynamic',
+                    width:250,
+                    height:200
+                });
+                var file = this.files[0];
+                var reader = new FileReader();
+                // Set preview image into the popover data-content
+                reader.onload = function (e) {
+                    $(".image-preview-input-title").text("Change");
+                    $(".image-preview-clear").show();
+                    $(".image-preview-filename").val(file.name);
+                    img.attr('src', e.target.result);
+                    $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+
+
+</script>
+
+
+
+
+
+<script>
     $(document).ready(function() {
         $("#input-44").fileinput({
             uploadUrl: '/file-upload-batch/2',
@@ -1196,9 +1095,10 @@
 
 
 <script>
+    /* window.alert('this is shit'); */
 
     $(document).ready(function() {
-        window.alert('this is shit');
+
 
         $("div.list-group>a").click(function(e) {
             e.preventDefault();
@@ -1213,127 +1113,6 @@
 
 </script>
 
-
-
-<script>
-
-    /* pagination */
-    $.fn.pageMe = function(opts){
-        var $this = this,
-            defaults = {
-                perPage: 7,
-                showPrevNext: false,
-                numbersPerPage: 1,
-                hidePageNumbers: false
-            },
-            settings = $.extend(defaults, opts);
-
-        var listElement = $this;
-        var perPage = settings.perPage;
-        var children = listElement.children();
-        var pager = $('.pagination');
-
-        if (typeof settings.childSelector!="undefined") {
-            children = listElement.find(settings.childSelector);
-        }
-
-        if (typeof settings.pagerSelector!="undefined") {
-            pager = $(settings.pagerSelector);
-        }
-
-        var numItems = children.size();
-        var numPages = Math.ceil(numItems/perPage);
-
-        pager.data("curr",0);
-
-        if (settings.showPrevNext){
-            $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
-        }
-
-        var curr = 0;
-        while(numPages > curr && (settings.hidePageNumbers==false)){
-            $('<li><a href="#" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
-            curr++;
-        }
-
-        if (settings.numbersPerPage>1) {
-            $('.page_link').hide();
-            $('.page_link').slice(pager.data("curr"), settings.numbersPerPage).show();
-        }
-
-        if (settings.showPrevNext){
-            $('<li><a href="#" class="next_link">»</a></li>').appendTo(pager);
-        }
-
-        pager.find('.page_link:first').addClass('active');
-        if (numPages<=1) {
-            pager.find('.next_link').hide();
-        }
-        pager.children().eq(1).addClass("active");
-
-        children.hide();
-        children.slice(0, perPage).show();
-
-        pager.find('li .page_link').click(function(){
-            var clickedPage = $(this).html().valueOf()-1;
-            goTo(clickedPage,perPage);
-            return false;
-        });
-        pager.find('li .prev_link').click(function(){
-            previous();
-            return false;
-        });
-        pager.find('li .next_link').click(function(){
-            next();
-            return false;
-        });
-
-        function previous(){
-            var goToPage = parseInt(pager.data("curr")) - 1;
-            goTo(goToPage);
-        }
-
-        function next(){
-            goToPage = parseInt(pager.data("curr")) + 1;
-            goTo(goToPage);
-        }
-
-        function goTo(page){
-            var startAt = page * perPage,
-                endOn = startAt + perPage;
-
-            children.css('display','none').slice(startAt, endOn).show();
-
-            if (page>=1) {
-                pager.find('.prev_link').show();
-            }
-            else {
-                pager.find('.prev_link').hide();
-            }
-
-            if (page<(numPages-1)) {
-                pager.find('.next_link').show();
-            }
-            else {
-                pager.find('.next_link').hide();
-            }
-
-            pager.data("curr",page);
-
-            if (settings.numbersPerPage>1) {
-                $('.page_link').hide();
-                $('.page_link').slice(page, settings.numbersPerPage+page).show();
-            }
-
-            pager.children().removeClass("active");
-            pager.children().eq(page+1).addClass("active");
-        }
-    };
-
-    $('#items').pageMe({pagerSelector:'#myPager',childSelector:'tr',showPrevNext:true,hidePageNumbers:false,perPage:5});
-    /****/
-
-</script>
 
 </body>
 

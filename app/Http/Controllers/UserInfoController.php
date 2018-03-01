@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\UserProfile;
 use Illuminate\Support\Facades\Input;
-
+use Image;
+use Auth;
 class UserInfoController extends Controller
 {
     /**
@@ -18,9 +19,10 @@ class UserInfoController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index($id)
     {
-        return view('usersetting');
+        $userInfo=UserProfile::find($id);
+        return view('usersetting',compact('userInfo'));
     }
 
     /**
@@ -41,17 +43,10 @@ class UserInfoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(),
-            [
-                'userbio'=>'max:500',
-                'interest'=>'max:500',
-                'occupation'=>'max:100',
-                'city'=>'max:50',
-                'phonenumber'=>'max:50'
-            ]);
-        $userProfile= new UserProfile;
 
-        $userProfile->user_id = auth()->user()->id;
+      //  $userProfile= new UserProfile;
+
+       /* $userProfile->user_id = auth()->user()->id;
         $userProfile->userbio = Input::get("userbio");
         $userProfile->interest = Input::get("interest");
         $userProfile->occupation = Input::get("occupation");
@@ -59,8 +54,8 @@ class UserInfoController extends Controller
         $userProfile->phonenumber = Input::get("phonenumber");
         $userProfile->dob = Input::get("dob");
         $userProfile->gender = Input::get("gender");
-        $userProfile->save();
-//-------------------------------------------------------------------------------------
+        $userProfile->update();*/
+
 
 
         //updating query
@@ -70,7 +65,7 @@ class UserInfoController extends Controller
 
 
 
-        //------------------------------------------------------------------------------------------------
+
 
               //  'user_id'=>auth()->user()->id,
               //  'userbio'=>request('userbio'),
@@ -91,7 +86,7 @@ class UserInfoController extends Controller
 
 
         //$userProfile->save();
-        return view('userprofile');
+
 
     }
 
@@ -112,9 +107,29 @@ class UserInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $this->validate(request(),
+            [
+                'userbio'=>'max:500',
+                'interest'=>'max:500',
+                'occupation'=>'max:100',
+                'city'=>'max:50',
+                'phonenumber'=>'max:50'
+            ]);
+        UserProfile::where('user_id',auth()->id())->update([
+            'userbio'=>request('userbio'),
+            'interest'=>request('interest'),
+            'occupation'=>request('occupation'),
+            'city'=>request('city'),
+            'phonenumber'=>request('phonenumber'),
+            'dob'=>request('dob'),
+            'gender'=>request('gender'),
+        ]);
+
+
+
+        return redirect('/userprofile');
     }
 
     /**
@@ -139,4 +154,21 @@ class UserInfoController extends Controller
     {
         //
     }
+
+public function uploadPhoto(Request $request)
+{
+    if($request->hasFile('avatar')) {
+        $avatar = $request->file('avatar');
+        $filename =time().'.'.$avatar->getClientOriginalExtension();// . '.' . $avatar->getClientOriginalExtension();
+        // dd($filename);
+        Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $filename));
+        Auth::user()->avatar = $filename;
+        //$user
+        auth()->user()->update();
+
+    }
+    return redirect('/userprofile');
+}
+
+
 }

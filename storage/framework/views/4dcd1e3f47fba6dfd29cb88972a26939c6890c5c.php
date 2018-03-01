@@ -1002,7 +1002,7 @@
 
 
                             <div id="search">
-                                <i style="" id="search-icon" class="material-icons">add_location</i>
+                                <i style="" id="search-icon" class="material-icons"></i>
                                 <input type="text" class="form-control" placeholder="Enter your trip destination" id="search-input" />
                             </div>
 
@@ -1072,7 +1072,7 @@
                                 </div>
 
                                 <div id="search1">
-                                    <i style="" id="search-icon1" class="material-icons">location_city</i>
+                                    <i style="" id="search-icon1" class="material-icons"></i>
                                     <input type="text" class="form-control" placeholder="Enter your city" id="search-input1" />
                                 </div>
 

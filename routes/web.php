@@ -1,10 +1,19 @@
 <?php
 
 
-Route::get('/',function (){
 
-    return view('homepage');
-});
+    Route::get('/', function ()
+    {
+        if(auth()->check())
+        {
+           return redirect('/userprofile');
+        } else
+        {
+            return view('homepage');
+        }
+
+    });
+
 Route::get('/logout',function (){
 auth()->logout();
     return view('homepage');
@@ -28,8 +37,11 @@ Route::get('/homepage',function (){
 });
 Route::get('/userprofile','UserInfoController@show');
 
-Route::get('/user/info','UserInfoController@index');
-Route::post('/userprofile',"UserInfoController@store");
+Route::get('/user/info/{id}','UserInfoController@index');
+Route::post('/userprofile',"UserInfoController@edit");
+Route::post('/userprofile/upload',"UserInfoController@uploadPhoto");
+Route::post('/userprofile',"UserInfoController@edit");
+Route::post('/upload',"PostController@store");
 
 
 Route::get('/logout',function (){

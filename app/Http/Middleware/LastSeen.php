@@ -20,12 +20,14 @@ class LastSeen
             return $next($request);
         }
 
+        \App\UserProfile::where('User_id', auth()->id())
+            ->  update(['lastseen' => new \DateTime(),
+            ]);
 
-         \App\UserProfile::where('User_id', auth()->id())
-      ->  update(['updated_at' => new \DateTime(),
 
 
-        ]);
+
         return $next($request);
+
     }
 }
