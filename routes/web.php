@@ -22,13 +22,25 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('hottler/home','HottlerController@index');
-Route::get('hotel/login','Hottler\LoginController@showLoginForm')->name('hottler.login');
-Route::post('/hottler','Hottler\LoginController@login');
-Route::post('hottler-password/email','Hottler\ForgotPasswordController@sendResetLinkEmail')->name('hottler.password.email');
-Route::get('hottler-password/reset','Hottler\ForgotPasswordController@sendLinkRequestForm')->name('hottler.password.request');
-Route::post('hottler-password/reset','Hottler\ResetPasswordController@reset');
-Route::get('hottler-password/reset/{token}','Hottler\ResetPasswordController@showResetForm')->name('hottler.password.reset');
+
+
+Route::get('admin/home','AdminController@index');
+Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('/admin','Admin\LoginController@login');
+Route::post('admin-password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+Route::get('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+Route::post('admin-password/reset','Admin\ResetPasswordController@reset');
+Route::get('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/homepage',function (){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PostImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -61,19 +62,30 @@ class PostController extends Controller
          //   'description'=>request('description'),
        // ]));
 
-        if($request->hasFile('coverimage')&&('file')) {
+        if($request->hasFile('coverimage')) {
             $coverimage = $request->file('coverimage');
             $filename =time().'.'.$coverimage->getClientOriginalExtension();// . '.' . $avatar->getClientOriginalExtension();
             // dd($filename);
             Image::make($coverimage)->resize(300, 300)->save(public_path('/uploads/coverimages/' . $filename));
            $post->coverimage = $filename;
-            foreach($request->file as $file)
-            {
-                $filename2 =time().'.'.$file->getClientOriginalname();
-                Image::make($file)->resize(300, 300)->save(public_path('/uploads/images/' . $filename2));
-                $post->image1=$filename2;
-            }
+            $post->save();
+            if($request->hasFile('file')) {
+                foreach ($request->file as $file) {
+                    $filename2 = time() . '.' . $file->getClientOriginalname();
+                    Image::make($file)->resize(300, 200)->save(public_path('/uploads/images/' . $filename2));
+                    $postimage =new PostImage();
+                    $postimage->post_id= $post->id;
+                    $postimage->images=$filename2;
+                  // $image= PostImage::create([
+                   //     'post_id' => $post->id,
+                   //     'images' => $filename2,
+                   // ]);
+                    $postimage->save();
+                }
+               // $post->save();
 
+                return redirect('/userprofile');
+            }
         }
 
 

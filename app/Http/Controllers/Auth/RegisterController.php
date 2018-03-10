@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Post;
 use App\UserProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -76,6 +77,10 @@ class RegisterController extends Controller
              UserProfile::create([
                 'user_id' => $user->id,
         ]);
+      //  Post::create([
+         //   'user_id' => $user->id,
+        //]);
+
 
          return $user;
 

@@ -504,10 +504,13 @@
             <div class="panel panel-default target">
                 <div class="panel-heading" contenteditable="false">My Stories - manage your stories here</div>
                 <div class="panel-body">
+                    <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-                                <img alt="300x200" src="http://lorempixel.com/600/200/people">
+
+                                <img alt="300x200" src="/uploads/avatars/<?php echo e($post->avatar); ?> ">
+
                                 <div class="caption">
                                     <h3>
                                         Rover
@@ -528,53 +531,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="300x200" src="http://lorempixel.com/600/200/city">
-                                <div class="caption">
-                                    <h3>
-                                        Marmaduke
-                                    </h3>
-                                    <p>
-                                        Is just another friendly dog.
-                                    </p>
-                                    <p>
-                                        <button type="button" class="btn btn-info btn-md">
-                                            <span class="glyphicon glyphicon-edit"></span>edit
-                                        </button>
-
-                                        <button type="button" class="btn btn-danger btn-md">
-                                            <span class="glyphicon glyphicon-remove"></span>delete
-                                        </button>
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="300x200" src="http://lorempixel.com/600/200/sports">
-                                <div class="caption">
-                                    <h3>
-                                        Rocky
-                                    </h3>
-                                    <p>
-                                        Loves catnip and naps. Not fond of children.
-                                    </p>
-                                    <p>
-                                        <button type="button" class="btn btn-info btn-md">
-                                            <span class="glyphicon glyphicon-edit"></span>edit
-                                        </button>
-
-                                        <button type="button" class="btn btn-danger btn-md">
-                                            <span class="glyphicon glyphicon-remove"></span>delete
-                                        </button>
-
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                         <br>
                         <br>
@@ -647,7 +604,7 @@
                                     <div class=" col-lg-12">
                                         <label for="storycover">Story Cover Image</label>
                                         <div class="input-group image-preview">
-                                            <input type="file" name="coverimage" >
+                                            <input type="file" name="coverimage">
                                             <span class="input-group-btn">
                     <!-- image-preview-clear button -->
                     <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -757,7 +714,6 @@
                             <form method="post">
 
                                     <textarea class="userbio" type="text" required></textarea>
-
 
                             </form>
 

@@ -19,11 +19,6 @@ class CreatePostsTable extends Migration
             $table->text('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('coverimage')->default('storyimage.jpeg');
-            $table->string('image1')->default('storyimage.jpeg');
-            $table->string('image2')->default('storyimage.jpeg');
-            $table->string('image3')->default('storyimage.jpeg');
-            $table->string('image4')->default('storyimage.jpeg');
-            $table->string('image5')->default('storyimage.jpeg');
             $table->string('postvedio')->default('storyimage.jpeg');
             $table->timestamps();
         });

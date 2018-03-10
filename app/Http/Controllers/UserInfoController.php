@@ -8,6 +8,8 @@ use App\UserProfile;
 use Illuminate\Support\Facades\Input;
 use Image;
 use Auth;
+use App\User;
+use App\Post;
 class UserInfoController extends Controller
 {
     /**
@@ -98,7 +100,12 @@ class UserInfoController extends Controller
      */
     public function show()
     {
-        return view('userprofile');
+       // $posts = User::find(auth()->user()->id)->post;
+        $posts = Post::Where('user_id', auth()->id())->latest()->get();
+       // $posts =Post::find(1);
+//dd($posts);
+        //dd($posts->coverimage);
+        return view('userprofile',compact('posts'));
     }
 
     /**
