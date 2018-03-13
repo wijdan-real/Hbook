@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Post;
 
     Route::get('/', function ()
     {
@@ -9,14 +9,15 @@
            return redirect('/userprofile');
         } else
         {
-            return view('homepage');
+            $pics=App\Post::all();
+            return view('homepage',compact('pics'));
         }
 
     });
 
 Route::get('/logout',function (){
 auth()->logout();
-    return view('homepage');
+    return redirect('/homepage');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,6 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/home','AdminController@index');
 Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
+Route::get('admin/register','Admin\RegisterController@showRegistrationForm');
+Route::post('/adminprofile','Admin\RegisterController@register');
 Route::post('/admin','Admin\LoginController@login');
 Route::post('admin-password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
 Route::get('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
@@ -44,10 +47,25 @@ Route::get('admin-password/reset/{token}','Admin\ResetPasswordController@showRes
 
 
 Route::get('/homepage',function (){
-
-    return view('homepage');
+    $pics=App\Post::all();
+    return view('homepage',compact('pics'));
 });
 Route::get('/userprofile','UserInfoController@show');
+
+
+
+
+Route::get('/hotelprofile',function()
+{
+    return view('hotelprofile');
+});
+
+
+
+
+
+
+
 
 Route::get('/user/info/{id}','UserInfoController@index');
 Route::post('/userprofile',"UserInfoController@edit");
@@ -59,7 +77,9 @@ Route::post('/upload',"PostController@store");
 Route::get('/logout',function (){
 
    auth()->logout();
-    return view('homepage');
+    $pics=App\Post::all();
+    return redirect('/homepage');
+   // return view('homepage');
 });
 
 
@@ -87,8 +107,9 @@ Route::get('/categoryhotel',function (){
 
 
 Route::get('/homepage',function (){
+    $pics=App\Post::all();
+    return view('homepage',compact('pics'));
 
-    return view('homepage');
 });
 
 

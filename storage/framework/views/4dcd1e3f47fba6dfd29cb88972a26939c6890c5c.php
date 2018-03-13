@@ -1169,255 +1169,26 @@
         <div  class="main">
             <section id="section2">
 
-
+<?php $__currentLoopData = $pics; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                 <div style="top: 45px;" class="grid">
 
 
                     <figure class="effect-zoe padding-0">
-                        <img src="1.jpg" alt="img25"/>
+                        <img src="/uploads/coverimages/<?php echo e($pic->coverimage); ?>"/>
                         <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
+                            <h2><?php echo e($pic->description); ?> <span>Zoe</span></h2>
                             <p class="icon-links">
                                 <a href="#"><i class="fa fa-heart-o"></i></a>
                                 <a href="#"><i class="fa fa-facebook-official"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
+                            <p class="description"></p>
                         </figcaption>
                     </figure>
-                    <figure class="effect-zoe padding-0">
-                        <img src="3.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-                    <figure class="effect-zoe padding-0">
-                        <img src="4.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="5.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-                    <figure class="effect-zoe">
-                        <img src="2.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="6.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="7.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="8.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="9.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-                    <figure class="effect-zoe">
-                        <img src="10.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="11.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="12.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="13.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="14.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="15.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="16.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="effect-zoe">
-                        <img src="17.jpg" alt="img26"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
-
-
-                    <figure class="effect-zoe">
-                        <img src="18.jpg" alt="img25"/>
-                        <figcaption>
-                            <h2>Creative <span>Zoe</span></h2>
-                            <p class="icon-links">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-facebook-official"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </p>
-                            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-                        </figcaption>
-                    </figure>
-
 
                 </div>
-
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
             </section>
         </div>

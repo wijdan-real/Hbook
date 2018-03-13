@@ -8,6 +8,7 @@ use App\UserProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -65,18 +66,27 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $data,Request $request)
     {
         $user = User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
+            'role'=>request('role'),
             'password' => bcrypt($data['password'])
         ]);
+if($request->role=='simpleuser') {
+    UserProfile::create([
+        'user_id' => $user->id,
 
-             UserProfile::create([
+    ]);
+}
+        else
+        {
+            HotelProfile::create([
                 'user_id' => $user->id,
-        ]);
+            ]);
+        }
       //  Post::create([
          //   'user_id' => $user->id,
         //]);
@@ -84,6 +94,15 @@ class RegisterController extends Controller
 
          return $user;
 
+    }
+    public function redirectPath()
+    {
+        if (Auth::user()->role=='hottler') {
+            return '/hotelprofile';
+        }
+
+
+        return '/userprofile';
     }
 
 }

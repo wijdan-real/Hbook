@@ -72,7 +72,7 @@ class PostController extends Controller
             if($request->hasFile('file')) {
                 foreach ($request->file as $file) {
                     $filename2 = time() . '.' . $file->getClientOriginalname();
-                    Image::make($file)->resize(300, 200)->save(public_path('/uploads/images/' . $filename2));
+                    Image::make($file)->resize(300, 300)->save(public_path('/uploads/images/' . $filename2));
                     $postimage =new PostImage();
                     $postimage->post_id= $post->id;
                     $postimage->images=$filename2;

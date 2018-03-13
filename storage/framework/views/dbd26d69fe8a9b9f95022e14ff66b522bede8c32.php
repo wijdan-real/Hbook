@@ -721,7 +721,6 @@
                             <br>
 
                             <form>
-
                                 <textarea class="userbio" type="text" required></textarea>
 
 
@@ -750,8 +749,8 @@
         <script src="/plugins/bootstrap-select.min.js"></script>
         <script src="/codemirror/jquery.codemirror.js"></script>
         <script src="/beautifier.js"></script>
-
         <script>
+
             function readURL(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();

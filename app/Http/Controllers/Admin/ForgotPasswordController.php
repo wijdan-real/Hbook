@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
@@ -32,5 +34,9 @@ class ForgotPasswordController extends Controller
     public function showLinkRequestForm()
     {
         return view('admin.passwords.email');
+    }
+    public function broker()
+    {
+        return Password::broker('admins');
     }
 }

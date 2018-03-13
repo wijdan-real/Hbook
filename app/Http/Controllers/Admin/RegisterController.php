@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Admin;
 use App\Post;
 use App\UserProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -67,7 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        $admin = Admin::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
@@ -80,8 +83,32 @@ class RegisterController extends Controller
         //]);
 
 
-         return $user;
+         return $admin;
 
     }
+    public function showRegistrationForm()
+    {
+        return view('admin.register');
+    }
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($admin = $this->create($request->all())));
+
+        $this->guard()->login($admin);
+
+        return $this->registered($request, $admin)
+            ?: redirect($this->redirectPath());
+    }
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
+    protected function registered(Request $request, $admin)
+    {
+        //
+    }
+
 
 }

@@ -73,6 +73,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Role</label>
+                            <div class="col-lg-8">
+                                <label class="radio-inline">
+                                    <input type="radio" name="role"  value="hottler" required>Hottler
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="role" value="simpleuser" checked="checked" required>Simple User
+                                </label>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
