@@ -12,6 +12,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserProfile::class);
     }
+    public function hotelprofile()
+    {
+        return $this->hasOne(HotelProfile::class);
+    }
     public function post()
     {
         return $this->hasMany(Post::class);

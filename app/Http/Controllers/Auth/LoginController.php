@@ -39,5 +39,15 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
 
     }
+    public function redirectPath()
+    {
+        if  (auth()->user()->role =='simpleuser'){
+            return '/userprofile' ;
+        }
+else
+{
+    return '/hotelprofile';
+}
+    }
 
 }
